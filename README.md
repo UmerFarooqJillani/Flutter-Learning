@@ -71,7 +71,7 @@ Once you select this command, VS Code does the following:<br>
 
 ## Creating projects
 To create a new Flutter project from the Flutter starter app template:
-1. Go to View > Command Palette....
+1. Go to View > Command Palette....<br>
 You can also press Ctrl / Cmd + Shift + P.
 2. Type flutter.
 3. Select the Flutter: New Project.
