@@ -38,6 +38,7 @@ The flutter command-line tool is used to interact with the Flutter SDK. It helps
 - Controlling devices/emulators
 - Building production-ready app bundles
 - Accessing Flutter channels, upgrades, logs, etc.
+
 IDEs like VS Code or Android Studio internally run these commands behind the scenes when you click buttons like "Run" or "Analyze".
 
 
