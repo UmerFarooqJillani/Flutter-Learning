@@ -69,5 +69,21 @@ Once you select this command, VS Code does the following:<br>
 <span>&nbsp; &nbsp; Displays flutter (flutter) in the dropdown on the upper right of this panel.</span><br>
 <span>&nbsp; &nbsp;  the output of flutter doctor command.</span>
 
+## Creating projects
+There are a couple ways to create a new project.
+### Creating a new project
+To create a new Flutter project from the Flutter starter app template:
+1. Go to View > Command Palette....
+You can also press Ctrl / Cmd + Shift + P.
+2. Type flutter.
+3. Select the Flutter: New Project.
+4. Press Enter.
+5. Select Application.
+6. Press Enter.
+7. Select a Project location.
+8. Enter your desired Project name.
 
+Opening a project from existing source code
+--- 
+**Author:** [Umer Farooq Jillani](https://github.com/UmerFarooqJillani/Flutter-Learning)
 
