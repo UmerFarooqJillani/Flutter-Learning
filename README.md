@@ -84,6 +84,8 @@ You can also press Ctrl / Cmd + Shift + P.
 8. Enter your desired Project name.
 
 Opening a project from existing source code
---- 
+
+---
+ 
 **Author:** [Umer Farooq Jillani](https://github.com/UmerFarooqJillani/Flutter-Learning)
 
