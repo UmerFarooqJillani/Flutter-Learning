@@ -61,7 +61,7 @@ VS Code is a code editor to build and debug apps. With the Flutter extension ins
 ### Validate your VS Code setup
 1. Go to View > Command Palette....<br>
 <span>&nbsp; You can also press Ctrl / Cmd + Shift + P.</span><br>
-2. Type doctor.
+2. Type **doctor**.
 3. Select Flutter: Run Flutter Doctor.<br>
 Once you select this command, VS Code does the following:
 <span>&nbsp; &nbsp; Opens the Output panel.</span><br>
