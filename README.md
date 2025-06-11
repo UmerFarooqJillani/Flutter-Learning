@@ -70,8 +70,6 @@ Once you select this command, VS Code does the following:<br>
 <span>&nbsp; &nbsp;  the output of flutter doctor command.</span>
 
 ## Creating projects
-There are a couple ways to create a new project.
-### Creating a new project
 To create a new Flutter project from the Flutter starter app template:
 1. Go to View > Command Palette....
 You can also press Ctrl / Cmd + Shift + P.
