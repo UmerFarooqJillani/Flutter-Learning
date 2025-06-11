@@ -56,7 +56,7 @@ VS Code is a code editor to build and debug apps. With the Flutter extension ins
 **Install the Flutter extension:**
 - Start VS Code.
 - Open a browser and go to the Flutter extension page on the Visual Studio Marketplace.
-- Click Install. Installing the Flutter extension also installs the Dart extension.
+- Installing the Flutter extension also installs the Dart extension.
 
 ### Validate your VS Code setup
 1. Go to View > Command Palette....
