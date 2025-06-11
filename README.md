@@ -31,16 +31,16 @@ To set up a development environment for Flutter, you need to install the followi
 Once you have installed all the required software, you can create a new Flutter project using the Flutter CLI or your IDE, and start building your app.
 
 ## What is the flutter Command-Line Tool?
-The flutter command-line tool is used to interact with the Flutter SDK. It helps in:
-- Creating Flutter projects
-- Managing dependencies
-- Running and debugging apps
-- Analyzing and testing code
-- Controlling devices/emulators
-- Building production-ready app bundles
-- Accessing Flutter channels, upgrades, logs, etc.
+Flutter CLI (Command Line Interface) is a command-line tool that is used to develop, build, and run Flutter applications. It provides a set of commands and tools that developers can use to create, test, and deploy Flutter apps from the terminal.Flutter CLI include: 
+- Creating a new Flutter project
+- Running Flutter app on a connected device or emulator
+- Building and deploying Flutter app to app stores
+- Updating the Flutter framework and packages
+- Analyzing the performance of Flutter apps
 
 IDEs like VS Code or Android Studio internally run these commands behind the scenes when you click buttons like "Run" or "Analyze".
+
+
 
 
 
