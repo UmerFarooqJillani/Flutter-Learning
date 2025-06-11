@@ -86,6 +86,6 @@ You can also press Ctrl / Cmd + Shift + P.
 Opening a project from existing source code
 
 ---
- 
-**Author:** [Umer Farooq Jillani](https://github.com/UmerFarooqJillani/Flutter-Learning)
+
+**Author:** [Umer Farooq Jillani](https://github.com/UmerFarooqJillani/)
 
