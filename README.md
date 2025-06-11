@@ -65,11 +65,9 @@ You can also press Ctrl / Cmd + Shift + P.
 
 2. Type doctor.
 3. Select Flutter: Run Flutter Doctor.
-<p>
 Once you select this command, VS Code does the following:
-    - Opens the Output panel.
-    - Displays flutter (flutter) in the dropdown on the upper right of this panel.
-    - Displays the output of flutter doctor command.
-</p>
+&nbsp;&nbsp;- Opens the Output panel.
+&nbsp;&nbsp;- Displays flutter (flutter) in the dropdown on the upper right of this panel.
+&nbsp;&nbsp;- Displays the output of flutter doctor command.
 
 
