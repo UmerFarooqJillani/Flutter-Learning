@@ -40,12 +40,12 @@ Flutter CLI (Command Line Interface) is a command-line tool that is used to deve
 
 IDEs like VS Code or Android Studio internally run these commands behind the scenes when you click buttons like "Run" or "Analyze".
 ### Commonly Used Flutter CLI Commands
-```Terminal
+```
 $ flutter create my_app
-cd my_app
-flutter analyze
-flutter test
-flutter run lib/main.dart
+$ cd my_app
+$ flutter analyze
+$ flutter test
+$ flutter run lib/main.dart
 
 ```
 
