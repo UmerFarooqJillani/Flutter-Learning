@@ -12,9 +12,11 @@ Flutter is an open source UI software development kit (SDK) created by **Google*
 
 ## How to Use Flutter?
 - **Language Used:** Flutter uses [Dart language](https://github.com/UmerFarooqJillani/Dart-Learning)
+
 **Main Components:**
 - **Widgets**: The building blocks of UI.
 - MaterialApp, Scaffold, Container, etc.
+
 **Development Cycle:**
 - Write Dart code → Use widgets to build UI → Run in emulator/device → Debug using tools like DevTools.
 
