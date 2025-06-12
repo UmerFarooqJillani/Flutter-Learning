@@ -108,7 +108,29 @@ Padding(
 State refers to data that can change over time in your application, and when it changes, the UI rebuilds to reflect those changes.
 ### Inherited Widgets
 **InheritedWidget** is a special type of widget used to pass data down the widget tree efficiently without explicitly passing it through constructors.<br>
-**Why:**<br>
+#### Why:
 In large widget trees, passing data down manually via constructors becomes difficult. InheritedWidget provides a clean way to share state or data (like themes, authentication, or locale) with all its descendants.
 ### Stateless Widgets
+A **StatelessWidget** is a widget with no mutable state — it simply takes data (via constructor) and displays UI based on that.
+#### Why:
+Use this for UI components that don’t change over time. It is simple, fast, and ideal for static content.
+### Stateful Widgets
+A **StatefulWidget** is used when the widget has state that can change during the widget’s lifetime (e.g. user input, animation, button presses).
+#### Why: 
+Use this for widgets that need to be dynamically updated and re-rendered in response to interaction or data change.
+#### Styled Widgets
+These are visual widgets that provide predefined styles and behaviors for cross-platform UIs.
+##### Material Widgets (Android style)
+- Built to match Google’s Material Design.
+- Recommended if your app targets Android or is cross-platform.
+- Includes widgets like Scaffold, AppBar, ElevatedButton, MaterialApp.
+##### Cupertino Widgets (iOS style)
+- Designed to match Apple’s iOS look & feel.
+- Recommended only for iOS-specific styling or full iOS UI
+- Includes widgets like CupertinoApp, CupertinoButton, CupertinoNavigationBar
+
+
+
+
+
 
