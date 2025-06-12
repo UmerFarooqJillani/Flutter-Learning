@@ -1,0 +1,2 @@
+flutter create my_app       
+---> This creates a new folder my_app with a full Flutter project structure

@@ -80,9 +80,15 @@ You can also press Ctrl / Cmd + Shift + P.
 6. Press Enter.
 7. Select a Project location.
 8. Enter your desired Project name.
+9. Opening a project from existing source code
+10. Open the lib/main.dart File
+11. Now you can replace or edit 
+12. Run the App 
 
-Opening a project from existing source code
-
+```Terminal
+flutter run
+```
+Done! Your Flutter app will launch and show.
 ---
 
 **Author:** [Umer Farooq Jillani](https://github.com/UmerFarooqJillani/)
