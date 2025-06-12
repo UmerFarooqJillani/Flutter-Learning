@@ -106,8 +106,9 @@ Padding(
 ## Some Types of Widgets
 **State in Flutter:**
 State refers to data that can change over time in your application, and when it changes, the UI rebuilds to reflect those changes.
-- Inherited Widgets<br>
+### Inherited Widgets
 **InheritedWidget** is a special type of widget used to pass data down the widget tree efficiently without explicitly passing it through constructors.<br>
 **Why:**<br>
 In large widget trees, passing data down manually via constructors becomes difficult. InheritedWidget provides a clean way to share state or data (like themes, authentication, or locale) with all its descendants.
-- Stateless Widgets<br>
+### Stateless Widgets
+
