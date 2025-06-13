@@ -7,7 +7,7 @@ Flutter is an open source UI software development kit (SDK) created by **Google*
 - Write once (Single Codebase), run anywhere, saves time and effort
 - Fast Development and Hot Reload & declarative UI enables quick iteration
 - Compiles to native ARM (Advanced RISC (Reduced Instruction Set Computing) Machine) machine code (not interpreted)
-- Open Source & Strong Community	Constant improvements, support, and plugin ecosystem
+- Open Source & Strong Community Constant improvements, support, and plugin ecosystem
 - Fully customizable UI at any pixel level 
 
 ## How to Use Flutter?
