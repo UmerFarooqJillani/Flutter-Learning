@@ -1,0 +1,38 @@
+# Flutter/Dart-specific settings
+*.dart               text eol=lf
+*.yaml               text eol=lf
+*.md                 text eol=lf
+*.json               text eol=lf
+*.html               text eol=lf
+*.css                text eol=lf
+
+# Platform-specific files
+*.sh                 text eol=lf
+*.bat                text eol=crlf
+
+# Binary files (do not convert line endings)
+*.png                binary
+*.jpg                binary
+*.jpeg               binary
+*.ico                binary
+*.gif                binary
+*.pdf                binary
+*.ttf                binary
+*.otf                binary
+*.eot                binary
+*.woff               binary
+*.woff2              binary
+
+# Flutter platform-generated files — can safely keep LF
+*.gradle             text eol=lf
+*.kt                 text eol=lf
+*.java               text eol=lf
+*.swift              text eol=lf
+*.m                  text eol=lf
+*.h                  text eol=lf
+*.mm                 text eol=lf
+*.plist              text eol=lf
+*.cmake              text eol=lf
+
+# Prevent CRLF warnings by setting auto text normalization
+*                    text=auto
