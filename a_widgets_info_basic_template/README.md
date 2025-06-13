@@ -141,7 +141,8 @@ These are visual widgets that provide predefined styles and behaviors for cross-
 |     Platform Channels       | <-- Communicates with native code, also known as machine code (Java/Swift)
 +------------------------------+
 ```
-### 
+--- 
+
 
 
 
