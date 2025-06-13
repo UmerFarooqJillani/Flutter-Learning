@@ -36,22 +36,19 @@ void main() => runApp(MyApp());
   5- The Flutter framework builds a widget tree, followed by an element tree and render tree.
   6- You see the UI on screen.
 */
-class MyApp extends StatelessWidget {
+class MyApp extends StatelessWidget{
+  const MyApp({super.key});
+
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(title: Text('My Flutter App')),
         body: Center(
-          child: ElevatedButton(
-            onPressed: () {
-              print('Button Pressed!');
-            },
-            child: Text('Click Me'),
-          ),
+          child: Text('Hello'),
         ),
       ),
     );
   }
 }
+
