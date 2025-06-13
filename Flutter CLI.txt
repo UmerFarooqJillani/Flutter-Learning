@@ -1,4 +1,4 @@
 -----> Link the root repo README.md File (after Link remove this line) <-------
 
 flutter create my_app       
----> This creates a new folder my_app with a full Flutter project structure
+    ---> This creates a new folder my_app with a full Flutter project structure
