@@ -111,11 +111,11 @@ State refers to data that can change over time in your application, and when it 
 #### Why:
 In large widget trees, passing data down manually via constructors becomes difficult. InheritedWidget provides a clean way to share state or data (like themes, authentication, or locale) with all its descendants.
 ### Stateless Widgets
-A **StatelessWidget** is a widget with no mutable state — it simply takes data (via constructor) and displays UI based on that.
+A **StatelessWidget** is a user-defined widget with no mutable state — it simply takes data (via constructor) and displays UI based on that.
 #### Why:
 Use this for UI components that don’t change over time. It is simple, fast, and ideal for static content.
 ### Stateful Widgets
-A **StatefulWidget** is used when the widget has state that can change during the widget’s lifetime (e.g. user input, animation, button presses).
+A **StatefulWidget** is a user-defined widget used when the state that can change during the widget’s lifetime (e.g. user input, animation, button presses).
 #### Why: 
 Use this for widgets that need to be dynamically updated and re-rendered in response to interaction or data change.
 #### Styled Widgets
@@ -142,12 +142,4 @@ These are visual widgets that provide predefined styles and behaviors for cross-
 +------------------------------+
 ```
 --- 
-
-
-
-
-
-
-
-
 
