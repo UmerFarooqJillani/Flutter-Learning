@@ -128,6 +128,22 @@ These are visual widgets that provide predefined styles and behaviors for cross-
 - Designed to match Apple’s iOS look & feel.
 - Recommended only for iOS-specific styling or full iOS UI
 - Includes widgets like CupertinoApp, CupertinoButton, CupertinoNavigationBar
+---
+### Architecture Layers
+```
++------------------------------+
+|       Widget Layer          | <-- Describes UI
++------------------------------+
+|       Element Layer         | <-- Manages widget lifecycle and parent child relationship
++------------------------------+
+|     RenderObject Layer      | <-- Handles layout, paint, hit-test
++------------------------------+
+|     Platform Channels       | <-- Communicates with native code, also known as machine code (Java/Swift)
++------------------------------+
+```
+### 
+
+
 
 
 
