@@ -142,4 +142,8 @@ These are visual widgets that provide predefined styles and behaviors for cross-
 +------------------------------+
 ```
 --- 
-
+### What Are MaterialApp and WidgetsApp?
+- MaterialApp	
+A wrapper that provides Material Design UI features (like Scaffold, AppBar, FloatingActionButton) + routing, theming, and Directionality.
+- WidgetsApp	
+A lower-level wrapper that provides basic app infrastructure (like Navigator, Theme, Directionality), but no Material Design. Used for custom design (like games or iOS-styled apps).
