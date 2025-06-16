@@ -36,6 +36,16 @@ void main() => runApp(MyApp());
   5- The Flutter framework builds a widget tree, followed by an element tree and render tree.
   6- You see the UI on screen.
 */
+
+/*
+--> How to Use StatelessWidget
+    Step-by-step:
+      - Create a class
+      - Extend it from StatelessWidget
+      - Override the build() method
+      - Return UI from build()
+*/
+
 class MyApp extends StatelessWidget{
   const MyApp({super.key});
 
@@ -45,7 +55,7 @@ class MyApp extends StatelessWidget{
       debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: Center(
-          child: Text('Hello'),
+          child: Text("Umer Farooq Jillani"),
         ),
       ),
     );
