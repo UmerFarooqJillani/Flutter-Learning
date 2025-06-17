@@ -12,12 +12,13 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false, // Hide debug banner
       home: Scaffold(
-        appBar: AppBar( 
+        appBar: AppBar(
           title: const Text('MyName'),
           centerTitle: true,
           // backgroundColor: Colors.white,
           leading: Icon(Icons.menu), // top-left icon
-          actions: [          //Top-right icon
+          actions: [
+            //Top-right icon
             IconButton(
               icon: Icon(Icons.search),
               onPressed: () {
@@ -31,21 +32,26 @@ class MyApp extends StatelessWidget {
               },
             ),
           ],
-          elevation: 4.0,         // add the drop shadow below the AppBar 
-          flexibleSpace: Container(   // add a custom background layer
+          elevation: 4.0, // add the drop shadow below the AppBar
+          flexibleSpace: Container(
+            // add a custom background layer
             decoration: BoxDecoration(
               gradient: LinearGradient(
-                colors: [Colors.indigo, Colors.purple],
+                colors: [
+                  const Color.fromARGB(255, 200, 207, 248),
+                  const Color.fromARGB(255, 254, 254, 254),
+                ],
                 begin: Alignment.topLeft,
                 end: Alignment.bottomRight,
               ),
             ),
           ),
-          bottom: PreferredSize(    // add a widget below the AppBar
+          bottom: PreferredSize(
+            // add a widget below the AppBar
             preferredSize: Size.fromHeight(50.0), // Required height
             child: Container(
               height: 50.0,
-              color: Colors.indigo[200],
+              color: const Color.fromARGB(255, 233, 236, 253),
               child: Center(child: Text('Welcome to the App')),
             ),
           ),
@@ -165,21 +171,30 @@ Right-side navigation drawer
 */
         // ------------------------------------------------------------------
         body: Center(
-          child: Text('Welcome to User!', style: TextStyle(fontSize: 24)),
-        ),
+            child: Text('Welcome to User!', style: TextStyle(fontSize: 24)),
+          ),
         /*
 --> body:
-Main screen content
+    - Main screen content
+    common components and widgets:
+      - Center(child: ...)
+        . Centers a single widget in the available space.
+        . Used when you want to place something in the middle of the screen.
+        e.g: 
+          body: Center(
+            child: Text('Welcome to User!', style: TextStyle(fontSize: 24)),
+          ),
+  --------------------------
 */
         // ------------------------------------------------------------------
         floatingActionButton: FloatingActionButton(
           onPressed: () {},
           // backgroundColor: Colors.indigo,
-          child: Icon(Icons.add),
+          child: Icon(Icons.qr_code_scanner),
         ),
         /**
 --> floatingActionButton:	
-Circular button that floats above content
+    . Circular button that floats above content
 */
         // ------------------------------------------------------------------
         bottomNavigationBar: BottomNavigationBar(
@@ -195,7 +210,7 @@ Menu/navigation bar at the bottom
         // ------------------------------------------------------------------
         bottomSheet: Container(
           height: 50,
-          color: Colors.yellow,
+          color: const Color.fromARGB(39, 255, 235, 59),
           child: Center(
             child: Text('Bottom Sheet', style: TextStyle(color: Colors.black)),
           ),
