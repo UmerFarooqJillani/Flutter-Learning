@@ -16,6 +16,14 @@ In Dart, to inherit behavior from a class, we use extends.
       RenderObject (e.g. RenderParagraph for Text)
 ```
 --- 
+## StatelessWidget Architecture (Developer Perspective)
+```
+    UI (What you design)
+    └── Widget Tree (Static blueprint)
+        └── Element Tree (Runtime instance of widgets)
+                └── RenderObject Tree (Actual layout, paint, hit-test engine)
+```
+--- 
 ## When to Use 'StatelessWidget'
 - The widget doesn’t depend on user input
 - It doesn’t change during runtime
@@ -51,16 +59,18 @@ The caller can write 'MyApp(key: someKey)' or just 'MyApp()'
 - It defines the first screen (or main route) of your app.
 - It is the entry point widget when the app loads.
 ### 'Scaffold()' Complete Structure
-        'Scaffold' is a layout skeleton provided by Material Design that gives a structure like: 
-          Scaffold(
-            appBar: AppBar(...),            // Header bar
-            body: Center(...),              // Main content
-            drawer: Drawer(...),            // Left side navigation
-            endDrawer: Drawer(...),         // Right side navigation
-            floatingActionButton: FAB(...), // Circular action button
-            bottomNavigationBar: ...,       // Bottom menu
-            bottomSheet: ...,               // Permanent footer section
-            backgroundColor: Colors.white,  // Page background
-            resizeToAvoidBottomInset: true, // Adjust for keyboard
-          )
-        You wrap most of your app 'screens' in a Scaffold
+'Scaffold' is a layout skeleton provided by Material Design that gives a structure like: 
+```
+Scaffold(
+  appBar: AppBar(...),            // Header bar
+  body: Center(...),              // Main content
+  drawer: Drawer(...),            // Left side navigation
+  endDrawer: Drawer(...),         // Right side navigation
+  floatingActionButton: FAB(...), // Circular action button
+  bottomNavigationBar: ...,       // Bottom menu
+  bottomSheet: ...,               // Permanent footer section
+  backgroundColor: Colors.white,  // Page background
+  resizeToAvoidBottomInset: true, // Adjust for keyboard
+)
+```
+You wrap most of your app 'screens' in a Scaffold<br>
