@@ -74,5 +74,5 @@ Scaffold(
 )
 ```
 You wrap most of your app 'screens' in a Scaffold<br>
-More Details [https://github.com/UmerFarooqJillani/Flutter-Learning/blob/main/b_state_less_and_full_widgets_components/lib/statelesswidgets.dart](Click Here).
+More Details [Click Here](https://github.com/UmerFarooqJillani/Flutter-Learning/blob/main/b_state_less_and_full_widgets_components/lib/statelesswidgets.dart).
 #
