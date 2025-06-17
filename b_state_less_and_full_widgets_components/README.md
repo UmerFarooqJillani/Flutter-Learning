@@ -95,3 +95,10 @@ More Details [Click Here](https://github.com/UmerFarooqJillani/Flutter-Learning/
 - You handle form inputs, switches, checkboxes, or user-driven changes.
 - You need to manage lifecycle events (init, dispose, etc.)
 - You want to fetch/update data (e.g., from API or database).
+--- 
+## Structure of a StatefulWidget
+A StatefulWidget is split into two parts:
+1. StatefulWidget class	
+    - Configuration - receives parameters, sets up the UI
+2. State class	
+    - Holds data/state, and updates UI by calling setState()
