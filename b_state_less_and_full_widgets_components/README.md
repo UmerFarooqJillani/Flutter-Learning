@@ -75,11 +75,12 @@ Scaffold(
 ```
 You wrap most of your app 'screens' in a Scaffold.
 More Details [Click Here](https://github.com/UmerFarooqJillani/Flutter-Learning/blob/main/b_state_less_and_full_widgets_components/lib/statelesswidgets.dart).
-### 'child:' and 'children:' in flutter
-#### 'child:'
+--- 
+## 'child:' and 'children:' in flutter
+### 'child:'
 - when a widget expects only one child.
 - This is common in layout widgets that wrap a single element.
-#### 'children:'
+### 'children:'
 - For multiple widgets
 - when a widget expects a list of widgets.
 - Typically used in layout widgets like Row, Column, ListView, et
