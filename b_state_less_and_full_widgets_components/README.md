@@ -4,6 +4,7 @@
 In Dart, to inherit behavior from a class, we use extends.
 - 'MyApp' is a widget that has no state, and I want Flutter to manage and build it like: StatelessWidget
 - This gives us access to the build() method which Flutter needs to call to render the UI.
+-- 
 ## StatelessWidget Internal Architecture
 ```
       Widget Tree (Code Layer)
