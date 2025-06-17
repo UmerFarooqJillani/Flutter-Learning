@@ -1,5 +1,8 @@
 # <p align = "Center"> b_state_less_and_full_widgets_components </p>
 
+--- 
+## <p align="center">StatelessWidget</p>
+--- 
 ## Why do we extend the 'Statelesswidget'
 In Dart, to inherit behavior from a class, we use extends.
 - 'MyApp' is a widget that has no state, and I want Flutter to manage and build it like: StatelessWidget
@@ -83,4 +86,12 @@ More Details [Click Here](https://github.com/UmerFarooqJillani/Flutter-Learning/
 ### 'children:'
 - For multiple widgets
 - when a widget expects a list of widgets.
-- Typically used in layout widgets like Row, Column, ListView, et
+- Typically used in layout widgets like Row, Column, ListView, etc.
+--- 
+## <p align="center">StatefulWidget</p>
+--- 
+## When to Use a StatefulWidget?
+- You want to change UI dynamically (e.g., button click updates a counter).
+- You handle form inputs, switches, checkboxes, or user-driven changes.
+- You need to manage lifecycle events (init, dispose, etc.)
+- You want to fetch/update data (e.g., from API or database).
