@@ -151,7 +151,8 @@ class MyApp extends StatelessWidget {
         ),
         /*
 --> drawer:
-Left-side navigation drawer (hamburger menu)
+. Left-side navigation drawer (hamburger menu).
+. To show user account info, settings, and app options.
 */
         // ------------------------------------------------------------------
         endDrawer: Drawer(
