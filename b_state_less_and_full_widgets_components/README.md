@@ -59,7 +59,7 @@ The caller can write 'MyApp(key: someKey)' or just 'MyApp()'
 - Setting this to false in MaterialApp hides that banner.
 ### 'home: '
 - home is a named parameter of the MaterialApp widget.
-- It defines the first screen (or main route) of your app.
+- It defines the first screen (or default/main route) of your app.
 - It is the entry point widget when the app loads.
 ### 'Scaffold()' Complete Structure
 'Scaffold' is a layout skeleton provided by Material Design that gives a structure like: 
@@ -102,3 +102,56 @@ A StatefulWidget is split into two parts:
     - Configuration - receives parameters, sets up the UI
 2. State class	
     - Holds data/state, and updates UI by calling setState()
+    - Business logic + mutable state
+--- 
+## Why StatefulWidget is Split?
+Flutter splits widgets into StatefulWidget and State:
+- So Flutter can reuse the State object even if the parent widget rebuilds.
+- This allows better performance and lifecycle control.
+--- 
+## StatefulWidget Architecture
+```
+        ┌────────────────────────┐
+        │  StatefulWidget (UI)   │   ← UI Description
+        └────────────┬───────────┘
+                     │ calls
+                     ▼ 
+        ┌────────────────────────┐
+        │    createState()       │   ← One-time call
+        └────────────┬───────────┘
+                     │ returns
+                     ▼
+        ┌────────────────────────┐
+        │  State<extendsWidget>  │   ← Holds state & logic
+        └────────────┬───────────┘
+                     │ triggers via setState()
+                     ▼
+        ┌────────────────────────┐
+        │     build() Method     │   ← Rebuilds UI
+        └────────────────────────┘
+```
+--- 
+## Components of StatefulWidget
+### 'class CounterWidget extends StatefulWidget'
+- Declares a widget that can change state.
+- Doesn't hold the state itself. Instead, delegates to _CounterWidgetState.
+
+### 'createState()'
+- Tells Flutter which State class to use for this widget.
+- Returns an instance of _CounterWidgetState.
+
+### 'class _CounterWidgetState extends State<CounterWidget>'
+- Holds the mutable data.
+- Rebuilds the UI using setState.
+
+### 'int _counter = 0;'
+- Actual state/variable that changes over time.
+
+### 'setState(() { ... });'
+- Triggers the widget to rebuild (calls build() again).
+- Must wrap any change to state variables.
+
+### 'build(BuildContext context)'
+- The UI rendering method.
+- Called again every time setState() is called.
+
