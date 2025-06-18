@@ -72,7 +72,7 @@ class MyApp extends StatelessWidget {
 // 2. StatefulWidget - describes the widget config
 class _CounterWidget extends StatefulWidget { 
   @override
-  CounterWidgetState createState() => CounterWidgetState();   //  This is an overridden method from StatefulWidget
+  CounterWidgetState createState() => CounterWidgetState(); 
   // createState() --> Creates the associated State class
 }
 
@@ -129,8 +129,9 @@ class CounterWidgetState extends State<_CounterWidget> {
   @override
   void dispose() {
     // dispose() --> Cleanup when widget is removed
-    print("State Disposed");
+    //           --> CALLED ONCE (when widget removed)
     super.dispose();
+    print("State Disposed");
   }
 }
 

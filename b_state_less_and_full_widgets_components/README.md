@@ -132,17 +132,25 @@ Flutter splits widgets into StatefulWidget and State:
 ```
 --- 
 ## Components of StatefulWidget
-### 'class CounterWidget extends StatefulWidget'
+### 'class _CounterWidget extends StatefulWidget'
 - Declares a widget that can change state.
-- Doesn't hold the state itself. Instead, delegates to _CounterWidgetState.
+- It inherits from StatefulWidget, so it must implement createState() method.
+- Doesn't hold the state itself. Instead, representative to 'CounterWidgetState'.
+- The _ before the name makes it private to this Dart file
+- Private class:  It's a good practice to encapsulate the widget logic.
 
-### 'createState()'
+### '@override CounterWidgetState createState() => CounterWidgetState();'
+- It's called when the widget is first inserted into the widget tree.
+- It returns the State class that contains the actual UI and logic for the widget.
+#### 'createState()'
+- createState() connects your widget (_CounterWidget) to its logic/UI (CounterWidgetState)
 - Tells Flutter which State class to use for this widget.
 - Returns an instance of _CounterWidgetState.
 
-### 'class _CounterWidgetState extends State<CounterWidget>'
-- Holds the mutable data.
-- Rebuilds the UI using setState.
+### Why Do We Use State<_CounterWidget>?
+Because Flutter needs to know which widget this state belongs to. It uses this info internally to:
+- Call lifecycle methods like **initState**, **build**, **dispose**.
+- Rebuild the widget when **setState()** is called.
 
 ### 'int _counter = 0;'
 - Actual state/variable that changes over time.
@@ -153,5 +161,7 @@ Flutter splits widgets into StatefulWidget and State:
 
 ### 'build(BuildContext context)'
 - The UI rendering method.
-- Called again every time setState() is called.
+- Called again every time setState() is called.<br><br>
+More Details [Click Here](https://github.com/UmerFarooqJillani/Flutter-Learning/blob/main/b_state_less_and_full_widgets_components/lib/statefulwidgets.dart).
+--- 
 
