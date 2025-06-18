@@ -181,4 +181,146 @@ Because Flutter needs to know which widget this state belongs to. It uses this i
 - Called again every time setState() is called.<br><br>
 More Details [Click Here](https://github.com/UmerFarooqJillani/Flutter-Learning/blob/main/b_state_less_and_full_widgets_components/lib/statefulwidgets.dart).
 --- 
+## <p align = "Center"> Widget Tree </p>
+--- 
+The Widget Tree is a hierarchical structure of widgets in your app like a blueprint or skeleton. Every visual component on the screen (buttons, text, containers, images, layout, etc.) is a widget.
+### Real Code and Matching Widget Tree
+```
+import 'package:flutter/material.dart';
 
+void main() {
+  runApp(const MyApp());        // Root Widget
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Flutter Demo',
+      home: const MyHomePage(title: 'Flutter Demo Home Page'),
+    );
+  }
+}
+
+class MyHomePage extends StatefulWidget {
+  const MyHomePage({super.key, required this.title});
+
+  final String title;
+
+  @override
+  State<MyHomePage> createState() => _MyHomePageState();
+}
+
+class _MyHomePageState extends State<MyHomePage> {
+  int _counter = 0;
+
+  void _incrementCounter() {
+    setState(() {
+      _counter++;
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(title: Text(widget.title)),
+      body: Center(
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: <Widget>[
+            const Text('You have pushed the button this many times:'),
+            Text('$_counter', style: Theme.of(context).textTheme.headlineMedium),
+          ],
+        ),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: _incrementCounter,
+        tooltip: 'Increment',
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
+```
+Tree Form of the Above Code:
+```
+    MyApp (StatelessWidget)
+    └── MaterialApp
+        ├── title: 'Flutter Demo'
+        └── home: MyHomePage (StatefulWidget)
+            └── Scaffold
+                ├── appBar: AppBar
+                │   └── Text(widget.title)
+                ├── body: Center
+                │   └── Column
+                │       ├── Text('You have pushed the button this many times:')
+                │       └── Text('$_counter')
+                └── floatingActionButton: FloatingActionButton
+                    ├── onPressed: _incrementCounter
+                    └── child: Icon(Icons.add)
+```
+--- 
+### Why Is It Called a "Tree"?
+Just like a tree:
+- There's a root (usually MaterialApp).
+- Every widget can have branches (children widgets).
+- Those branches can have sub-branches (grandchildren), and so on.<br>
+It grows top-down, and Flutter builds and renders it this way.
+--- 
+### What is the Flutter Tree Structure?
+Flutter internally maintains 3 parallel trees:
+- **Widget Tree**	Blueprint / structure (your code)
+- **Element Tree**	Connects widgets to the render system (runtime instance)
+- **Render Tree**	Actual objects that handle layout, painting, etc.
+--- 
+### B. StatefulWidget Trees
+Here's an example of a counter app using StatefulWidget:
+``` 
+class CounterWidget extends StatefulWidget {
+  @override
+  CounterWidgetState createState() => CounterWidgetState();
+}
+
+class CounterWidgetState extends State<CounterWidget> {
+  int counter = 0;
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(child: Text('$counter')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => setState(() => counter++),
+        child: Icon(Icons.add),
+      ),
+    );
+  }
+}
+``` 
+1. Widget Tree
+``` 
+CounterWidget (StatefulWidget)
+ └── Scaffold
+      ├── Center
+      │    └── Text('$counter')
+      └── FloatingActionButton
+           └── Icon(Icons.add)
+``` 
+2. Element Tree
+``` 
+StatefulElement (CounterWidget)
+ └── ScaffoldElement
+      ├── CenterElement
+      │    └── TextElement ("0")
+      └── FABElement
+           └── IconElement
+``` 
+3. RenderObject Tree
+``` 
+RenderView
+ └── RenderBox (Scaffold)
+      ├── RenderBox (Text)
+      └── RenderBox (FloatingActionButton)
+``` 
+--- 
