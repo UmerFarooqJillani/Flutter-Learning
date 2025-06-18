@@ -78,6 +78,7 @@ Scaffold(
 ```
 You wrap most of your app 'screens' in a Scaffold.
 More Details [Click Here](https://github.com/UmerFarooqJillani/Flutter-Learning/blob/main/b_state_less_and_full_widgets_components/lib/statelesswidgets.dart).
+
 --- 
 ## 'child:' and 'children:' in flutter
 ### 'child:'
