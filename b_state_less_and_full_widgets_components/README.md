@@ -275,7 +275,7 @@ Flutter internally maintains 3 parallel trees:
 - **Element Tree**	Connects widgets to the render system (runtime instance)
 - **Render Tree**	Actual objects that handle layout, painting, etc.
 --- 
-### B. StatefulWidget Trees
+### Flutter Trees Example
 Here's an example of a counter app using StatefulWidget:
 ``` 
 class CounterWidget extends StatefulWidget {
