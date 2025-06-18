@@ -70,9 +70,9 @@ class MyApp extends StatelessWidget {
 }
 
 // 2. StatefulWidget - describes the widget config
-class _CounterWidget extends StatefulWidget {
+class _CounterWidget extends StatefulWidget { 
   @override
-  CounterWidgetState createState() => CounterWidgetState();
+  CounterWidgetState createState() => CounterWidgetState();   //  This is an overridden method from StatefulWidget
   // createState() --> Creates the associated State class
 }
 
