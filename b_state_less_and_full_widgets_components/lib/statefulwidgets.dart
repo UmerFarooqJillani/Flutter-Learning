@@ -134,20 +134,3 @@ class CounterWidgetState extends State<_CounterWidget> {
     print("State Disposed");
   }
 }
-
-/*
---> Flutter Rebuild Flow
-      User clicks FAB
-             │
-             ▼
-      Trigger setState()
-             │
-             ▼
-      Flutter calls build()
-             │
-             ▼
-      New widget tree rendered
-             │
-             ▼
-      Updated UI on screen
-*/

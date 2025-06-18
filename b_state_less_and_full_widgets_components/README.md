@@ -131,6 +131,23 @@ Flutter splits widgets into StatefulWidget and State:
         └────────────────────────┘
 ```
 --- 
+## Flutter Rebuild Flow
+```
+      User clicks FAB (FoatingActionButton)
+             │
+             ▼
+      Trigger setState()
+             │
+             ▼
+      Flutter calls build()
+             │
+             ▼
+      New widget tree rendered
+             │
+             ▼
+      Updated UI on screen
+``` 
+--- 
 ## Components of StatefulWidget
 ### 'class _CounterWidget extends StatefulWidget'
 - Declares a widget that can change state.
