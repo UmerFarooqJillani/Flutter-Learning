@@ -16,14 +16,19 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Images insert
-              Image.asset(
+              // Images insert 
+              Image.asset(   
                 'assets/images/Asset_18.png',
                 height: 200,
                 width: 300,
                 fit: BoxFit.cover, // or BoxFit.contain, BoxFit.fill etc.
               ),
 
+              SizedBox(
+                // Blank space (Alternate to padding and margin Recommanded to use)
+                height: 20,
+                // child: Text("Hello"),
+              ),
 
               // font Style and use the font external and internal packages
               Text(
@@ -34,16 +39,15 @@ class MyApp extends StatelessWidget {
                 //   fontWeight: FontWeight.bold,
                 //   color: const Color.fromARGB(255, 10, 150, 150),
                 // ),
-                style: GoogleFonts.specialElite(      // External Font (Google Fonts Package)
+                style: GoogleFonts.specialElite(
+                  // External Font (Google Fonts Package)
                   textStyle: TextStyle(
                     fontSize: 24,
                     fontWeight: FontWeight.w500,
-                  )
-                )
+                    color: const Color.fromARGB(255, 10, 150, 150),
+                  ),
+                ),
               ),
-
-
-              
             ],
           ),
         ),
