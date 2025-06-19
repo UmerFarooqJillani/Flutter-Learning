@@ -3,38 +3,38 @@
 ## Default Flutter Project Structure
 
 ### 📂 .dart_tool/ 
-**Purpose:**<br>
-It stores project-specific build info, package configurations, and tool caches used internally by the Dart/Flutter ecosystem.<br><br>
-**Should You Edit .dart_tool/**<br>
+#### Purpose:
+It stores project-specific build info, package configurations, and tool caches used internally by the Dart/Flutter ecosystem.
+#### Should You Edit .dart_tool/
 No
 ### 📂 .idea/
-**Purpose:**<br>
+#### Purpose:
 The .idea/ folder stores project-specific settings for Android Studio or IntelliJ IDE.
 It contains configuration files like:
 - Code style
 - Project settings
 - Plugin preferences
 - Run configurations
-- Workspace settings<br><br>
-**Should You Edit .idea/**<br>
+- Workspace settings
+#### Should You Edit .idea/
 No – Usually not.
 ### 📂 android/
-**Purpose:**<br>
+#### Purpose:
 - Contains native Android project code that runs your Flutter app on Android devices.
 - Acts like a normal Android project (if you were building an app using Java/Kotlin).
-- Useful for platform-specific code, plugins, SDK configs, Gradle builds, permissions, etc.<br><br>
-**Should You Edit android/** <br>
+- Useful for platform-specific code, plugins, SDK configs, Gradle builds, permissions, etc.
+#### Should You Edit android/
 Yes, if...
 - You need platform-specific Android functionality.
-- You need permissions, services, native integrations.<br>
+- You need permissions, services, native integrations.
 No, if...
 - You're only working with Flutter UI.
 - You're not using platform channels or SDKs.
 ### 📂 ios/
-**Purpose:**<br>
+#### Purpose:
 - The ios/ directory contains the iOS-native side of your Flutter app. It allows Flutter to integrate with iOS devices using native Swift/Objective-C code and the Xcode build system.
-- Flutter UI runs the same on all platforms, but this folder handles platform-specific features (notifications, permissions, splash screen, etc.) for iOS.<br><br>
-**Should You Edit ios/** <br>
+- Flutter UI runs the same on all platforms, but this folder handles platform-specific features (notifications, permissions, splash screen, etc.) for iOS.
+#### Should You Edit ios/
 ``` 
 |------------------------------------------------------------------------------------------------|
 | Use Case                                  | What You Do                                        |
@@ -47,14 +47,12 @@ No, if...
 |------------------------------------------------------------------------------------------------|
 ``` 
 ### 📂 lib/
-**Purpose:**<br>
+#### Purpose:
 
-<br>
 
-**Should You Edit lib/** <br>
+#### Should You Edit lib/
 
 ### 📂 linux/
-**Purpose:**<br>
-<br>
+#### Purpose:
 
-**Should You Edit linux/** <br>
+#### Should You Edit linux/
