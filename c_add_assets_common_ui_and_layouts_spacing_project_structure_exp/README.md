@@ -4,7 +4,7 @@
 
 ### 📂 .dart_tool/ 
 **Purpose:**<br>
-It stores project-specific build info, package configurations, and tool caches used internally by the Dart/Flutter ecosystem.<br>
+It stores project-specific build info, package configurations, and tool caches used internally by the Dart/Flutter ecosystem.<br><br>
 **Should You Edit .dart_tool/**<br>
 No
 ### 📂 .idea/
@@ -15,14 +15,14 @@ It contains configuration files like:
 - Project settings
 - Plugin preferences
 - Run configurations
-- Workspace settings<br>
+- Workspace settings<br><br>
 **Should You Edit .idea/**<br>
 No – Usually not.
 ### 📂 android/
 **Purpose:**<br>
 - Contains native Android project code that runs your Flutter app on Android devices.
 - Acts like a normal Android project (if you were building an app using Java/Kotlin).
-- Useful for platform-specific code, plugins, SDK configs, Gradle builds, permissions, etc.<br>
+- Useful for platform-specific code, plugins, SDK configs, Gradle builds, permissions, etc.<br><br>
 **Should You Edit android/** <br>
 Yes, if...
 - You need platform-specific Android functionality.
@@ -33,7 +33,7 @@ No, if...
 ### 📂 ios/
 **Purpose:**<br>
 - The ios/ directory contains the iOS-native side of your Flutter app. It allows Flutter to integrate with iOS devices using native Swift/Objective-C code and the Xcode build system.
-- Flutter UI runs the same on all platforms, but this folder handles platform-specific features (notifications, permissions, splash screen, etc.) for iOS.<br>
+- Flutter UI runs the same on all platforms, but this folder handles platform-specific features (notifications, permissions, splash screen, etc.) for iOS.<br><br>
 **Should You Edit ios/** <br>
 ``` 
 |------------------------------------------------------------------------------------------------|
