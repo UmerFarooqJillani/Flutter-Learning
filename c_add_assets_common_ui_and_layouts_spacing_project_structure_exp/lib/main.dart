@@ -16,6 +16,12 @@ class MyApp extends StatelessWidget {
           fit: BoxFit.fitWidth, // or BoxFit.contain, BoxFit.fill etc.
         ),
       ),
+      // child: Image.network(
+      //   'https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=',
+      //   width: 200,
+      //   height: 200,
+      //   fit: BoxFit.fitWidth,
+      // ),
     );
   }
 }

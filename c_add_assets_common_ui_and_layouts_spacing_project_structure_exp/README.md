@@ -159,7 +159,7 @@ You’ll edit this file often to:
 - Configure app metadata
 - Always run flutter pub get after changing it.
 --- 
-## <p align="center"> add and display images </p>
+## <p align="center"> Add and Display Images </p>
 --- 
 ### Assets (local images stored in your project)
 1. Create an assets/ folder: 
@@ -184,8 +184,17 @@ You can include all images in a folder:
 ```
     Image.asset('assets/images/my_image.png')
 ```
-
 ### Network (images loaded from the internet)
-
+```Dart
+Image.network(
+  'https://example.com/image.jpg',
+  width: 200,
+  height: 200,
+  fit: BoxFit.cover,
+)
+```
 ### Memory or File (advanced, usually with plugins like image_picker, file, etc.)
+You can use the **cached_network_image** package for caching & placeholders
+
+
  
