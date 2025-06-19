@@ -26,7 +26,7 @@ No – Usually not.
 #### Should You Edit android/
 Yes, if...
 - You need platform-specific Android functionality.
-- You need permissions, services, native integrations.
+- You need permissions, services, native integrations.<br><br>
 No, if...
 - You're only working with Flutter UI.
 - You're not using platform channels or SDKs.
