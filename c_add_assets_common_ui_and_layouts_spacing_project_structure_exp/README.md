@@ -4,7 +4,7 @@
 
 ### 📂 .dart_tool/ 
 **Purpose:**<br>
-It stores project-specific build info, package configurations, and tool caches used internally by the Dart/Flutter ecosystem.
+    It stores project-specific build info, package configurations, and tool caches used internally by the Dart/Flutter ecosystem.<br>
 **Should You Edit .dart_tool/**<br>
-No
+    No
 ### 📂 .idea/
