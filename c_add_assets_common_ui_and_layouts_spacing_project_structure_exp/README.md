@@ -195,6 +195,7 @@ Image.network(
 ```
 ### Memory or File (advanced, usually with plugins like image_picker, file, etc.)
 You can use the **cached_network_image** package for caching & placeholders
+
 --- 
 ## <p align="center"> Custom fonts in Flutter</p>
 --- 
