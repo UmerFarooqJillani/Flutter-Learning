@@ -159,4 +159,33 @@ You’ll edit this file often to:
 - Configure app metadata
 - Always run flutter pub get after changing it.
 --- 
+## <p align="center"> add and display images </p>
+--- 
+### Assets (local images stored in your project)
+1. Create an assets/ folder: 
+```
+    my_flutter_app/
+    ├── assets/
+    │   └── images/
+    │       └── my_image.png
+```
+2. Register the image in **pubspec.yaml**
+```
+flutter:
+    assets:
+        - assets/images/my_image.png   # For Specific Images
+``` 
+You can include all images in a folder:
+```
+  assets:
+    - assets/images/
+```
+3. Use Image.asset() in your widget
+```
+    Image.asset('assets/images/my_image.png')
+```
 
+### Network (images loaded from the internet)
+
+### Memory or File (advanced, usually with plugins like image_picker, file, etc.)
+ 
