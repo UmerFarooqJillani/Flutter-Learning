@@ -24,10 +24,10 @@ No – Usually not.
 - Acts like a normal Android project (if you were building an app using Java/Kotlin).
 - Useful for platform-specific code, plugins, SDK configs, Gradle builds, permissions, etc.
 #### Should You Edit android/
-Yes, if...
+##### Yes, if...
 - You need platform-specific Android functionality.
-- You need permissions, services, native integrations.<br><br>
-No, if...
+- You need permissions, services, native integrations.
+##### No, if...
 - You're only working with Flutter UI.
 - You're not using platform channels or SDKs.
 ### 📂 ios/
