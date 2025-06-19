@@ -195,6 +195,60 @@ Image.network(
 ```
 ### Memory or File (advanced, usually with plugins like image_picker, file, etc.)
 You can use the **cached_network_image** package for caching & placeholders
+--- 
+## <p align="center"> Custom fonts in Flutter</p>
+--- 
+### Internal Fonts (Local Fonts / Custom Fonts)
+- Add font files to your project
+- Put your **.ttf** font files inside a folder like:
+``` 
+    my_flutter_app/
+    ├── assets/
+    │   └── fonts/
+    │       ├── Poppins-Regular.ttf
+    │       └── Poppins-Bold.ttf
+```
+- Register fonts in pubspec.yaml
+``` 
+flutter:
+  fonts:
+    - family: Poppins
+      fonts:
+        - asset: assets/fonts/Poppins-Regular.ttf
+        - asset: assets/fonts/Poppins-Bold.ttf
+          weight: 700
+``` 
+- Use the custom font in Text
+```
+    Text(
+      'Hello World!',
+      style: TextStyle(
+        fontFamily: 'Poppins',   
+        fontSize: 24,
+        fontWeight: FontWeight.bold,
+      ),
+    )
+``` 
+### External Fonts (Google Fonts Package)
+- Go to 
+```
+    https://pub.dev/packages/google_fonts/install
+```
+or run 
+```
+flutter pub add google_fonts
+```
+- This will add a line like this to your package's **pubspec.yaml** (and run an implicit flutter pub get):
+```
+    dependencies:
+      google_fonts: ^6.2.1   # (Add dependencies)
+```
+- Import it 
+``` 
+import 'package:google_fonts/google_fonts.dart';
+```
+
+
 
 
  

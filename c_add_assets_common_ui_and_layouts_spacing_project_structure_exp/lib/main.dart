@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 void main() => runApp(MyApp());
 
@@ -7,21 +8,46 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: Center(
-        child: Image.asset(
-          'assets/images/Asset_18.png',
-          width: 200,
-          height: 200,
-          fit: BoxFit.fitWidth, // or BoxFit.contain, BoxFit.fill etc.
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: Scaffold(
+        backgroundColor: Colors.white,
+        body: Center(
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              // Images insert
+              Image.asset(
+                'assets/images/Asset_18.png',
+                height: 200,
+                width: 300,
+                fit: BoxFit.cover, // or BoxFit.contain, BoxFit.fill etc.
+              ),
+
+
+              // font Style and use the font external and internal packages
+              Text(
+                "Welcom to Kidlings Club",
+                // style: TextStyle(          // internal font (Local/Custom Font)
+                //   fontFamily: 'SpecialElite',
+                //   fontSize: 22,
+                //   fontWeight: FontWeight.bold,
+                //   color: const Color.fromARGB(255, 10, 150, 150),
+                // ),
+                style: GoogleFonts.specialElite(      // External Font (Google Fonts Package)
+                  textStyle: TextStyle(
+                    fontSize: 24,
+                    fontWeight: FontWeight.w500,
+                  )
+                )
+              ),
+
+
+              
+            ],
+          ),
         ),
       ),
-      // child: Image.network(
-      //   'https://media.istockphoto.com/id/1403500817/photo/the-craggies-in-the-blue-ridge-mountains.jpg?s=612x612&w=0&k=20&c=N-pGA8OClRVDzRfj_9AqANnOaDS3devZWwrQNwZuDSk=',
-      //   width: 200,
-      //   height: 200,
-      //   fit: BoxFit.fitWidth,
-      // ),
     );
   }
 }
