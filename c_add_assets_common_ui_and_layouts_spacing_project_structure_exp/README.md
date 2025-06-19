@@ -1,7 +1,8 @@
 # <p align="center"> c_add_assets_common_ui_and_layouts_spacing_project_structure_exp <p>
 
-## Default Flutter Project Structure
-
+--- 
+## <p align="center"> Default Flutter Project Structure </p>
+--- 
 ### 📂 .dart_tool/ 
 #### Purpose:
 It stores project-specific build info, package configurations, and tool caches used internally by the Dart/Flutter ecosystem.
