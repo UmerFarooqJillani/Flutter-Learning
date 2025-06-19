@@ -3,3 +3,8 @@
 ## Default Flutter Project Structure
 
 ### 📂 .dart_tool/ 
+**Purpose:**<br>
+It stores project-specific build info, package configurations, and tool caches used internally by the Dart/Flutter ecosystem.
+**Should You Edit .dart_tool/**<br>
+No
+### 📂 .idea/
