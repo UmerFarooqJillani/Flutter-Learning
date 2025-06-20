@@ -333,5 +333,109 @@ Row(
 ),
 ```
 ---
-# <p align="center">a </p>
+## <p align="center">All Types of Buttons in Flutter</p>
 --- 
+### `ElevatedButton`  
+- Raised button with elevation (3D look) 
+```dart
+ElevatedButton(
+  onPressed: () {
+    print("Clicked");
+  },
+  style: ElevatedButton.styleFrom(
+    backgroundColor: Colors.blue,
+    foregroundColor: Colors.white,
+    elevation: 5,
+    padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+    shape: RoundedRectangleBorder(
+      borderRadius: BorderRadius.circular(12),
+    ),
+  ),
+  child: Text("Elevated"),
+)
+```
+### `TextButton`          
+- Flat button without background
+```dart
+TextButton(
+  onPressed: () {},
+  child: Text("Text Button"),
+)
+```
+### `OutlinedButton`        
+- Bordered button without background
+```dart
+OutlinedButton(
+  onPressed: () {},
+  child: Text("Outlined"),
+)
+```
+### `IconButton`        
+- Button with only an icon
+```dart
+IconButton(
+  icon: Icon(Icons.favorite),
+  onPressed: () {},
+  iconSize: 30,
+  color: Colors.red,
+)
+```         
+### `FloatingActionButton` 
+- Circular button used for main actions
+```dart
+FloatingActionButton(
+  onPressed: () {},
+  child: Icon(Icons.add),
+  backgroundColor: Colors.orange,
+  tooltip: "Add",
+)
+```
+### `DropdownButton`        
+- Button that shows a dropdown menu
+```dart
+DropdownButton<String>(
+  value: selectedValue,
+  items: ['One', 'Two', 'Three'].map((String value) {
+    return DropdownMenuItem<String>(
+      value: value,
+      child: Text(value),
+    );
+  }).toList(),
+  onChanged: (value) {
+    setState(() {
+      selectedValue = value!;
+    });
+  },
+)
+```
+### `PopupMenuButton`       
+- Button that shows a popup menu
+```dart
+PopupMenuButton<String>(
+  onSelected: (value) {
+    print("Selected: $value");
+  },
+  itemBuilder: (context) => [
+    PopupMenuItem(value: "Edit", child: Text("Edit")),
+    PopupMenuItem(value: "Delete", child: Text("Delete")),
+  ],
+)
+```
+#### Styling Buttons
+```dart
+ElevatedButton(
+  style: ButtonStyle(
+    backgroundColor: MaterialStateProperty.all(Colors.green),
+    foregroundColor: MaterialStateProperty.all(Colors.white),
+    shape: MaterialStateProperty.all(
+      RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
+    ),
+  ),
+  onPressed: () {},
+  child: Text("Styled Button"),
+)
+```
+--- 
+## <p align=""> xyz </p>
+--- 
+### hey

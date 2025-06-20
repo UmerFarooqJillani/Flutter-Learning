@@ -57,7 +57,23 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
-              
+
+              // Buttons in Flutters
+              ElevatedButton(
+                onPressed: () {},
+                style: ElevatedButton.styleFrom(
+                  backgroundColor: Color.fromARGB(255, 10, 150, 150),
+                  foregroundColor: Colors.white,
+                  elevation: 5,
+                  padding: EdgeInsets.symmetric(horizontal: 24, vertical: 12),
+                  shape: RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(12),
+                  ),
+                ),
+                child: Text("Elevated"),
+              ),
+
+              //
               
             ],
           ),
