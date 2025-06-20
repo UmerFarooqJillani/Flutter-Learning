@@ -249,7 +249,87 @@ flutter pub add google_fonts
 import 'package:google_fonts/google_fonts.dart';
 ```
 
+--- 
+## <P align="center"> Even Spacing Widgets </p>
+--- 
+### Padding
+- Adds space inside the widget’s boundary (between the widget and its child).
+```dart
+Padding(
+  padding: EdgeInsets.all(16.0), // uniform padding
+  child: Text('Padded Text'),
+)
+// EdgeInsets.all(value) → same padding on all sides
+// EdgeInsets.symmetric(horizontal: 10, vertical: 20)
+// EdgeInsets.only(left: 10, right: 5)
+``` 
+### Margin (via Container)
+- Adds space outside the widget, between the widget and other siblings.
+```Dart
+Container(
+  margin: EdgeInsets.all(20), // outside spacing
+  child: Text('Text with Margin'),
+)
+```
+### SizedBox
+- Adds fixed-size spacing or invisible box between widgets.
+```dart
+SizedBox(height: 20), // vertical space
+SizedBox(width: 10),  // horizontal space
+``` 
+- Or use it to wrap a widget and give it a fixed size:
+``` dart
+SizedBox(
+  width: 100,
+  height: 50,
+  child: ElevatedButton(
+    onPressed: () {},
+    child: Text('Fixed Size Button'),
+  ),
+)
+``` 
+### MainAxisAlignment & CrossAxisAlignment
+- Used in Row, Column, and Flex widgets to control spacing between children.<br>
+Example:
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly, // space between children and the main axis of row are horizontally 
+  crossAxisAlignment: CrossAxisAlignment.center,     // alignment horizontally and the cross axis of row are vertically
+  children: [
+    Text("One"),
+    Text("Two"),
+    Text("Three"),
+  ],
+)
+``` 
+### Spacer Widget
+- Creates flexible empty space between widgets in a Row or Column.
+``` dart
+Row(
+  children: [
+    Text("Left"),
+    Spacer(),              // pushes the next widget to the end
+    Text("Right"),
+  ],
+)
+``` 
+### Align Widget
+- Used to align a widget within its parent and can affect positioning (acts like spacing sometimes).
+- It does not create space between widgets but rather positions a widget inside its parent container.
+``` dart
+Align(
+  alignment: Alignment.bottomRight,
+  child: Text("Aligned Text"),
+)
+``` 
+### Expanded Widget
+- Expands a child of a Row, Column, or Flex to fill the remaining space.
+```dart
+Row(
+  children: [
+    Expanded(child: Text("This fills available space")),
+    Icon(Icons.arrow_forward),
+  ],
+),
+```
 
-
-
- 

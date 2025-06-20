@@ -16,12 +16,21 @@ class MyApp extends StatelessWidget {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              // Images insert 
-              Image.asset(   
+              // Images insert
+              Image.asset(
                 'assets/images/Asset_18.png',
                 height: 200,
                 width: 300,
                 fit: BoxFit.cover, // or BoxFit.contain, BoxFit.fill etc.
+              ),
+
+              Padding(
+                padding: EdgeInsets.all(4.0), // uniform padding
+                // child: Text('Padded Text',
+                // style: TextStyle(
+                //   fontSize: 10,
+                // )
+                // ),
               ),
 
               SizedBox(
@@ -48,6 +57,8 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
+              
+              
             ],
           ),
         ),
