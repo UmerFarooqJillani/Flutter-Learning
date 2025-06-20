@@ -436,6 +436,81 @@ ElevatedButton(
 )
 ```
 --- 
-## <p align=""> xyz </p>
+## <p align="center"> widget-based layout system </p>
 --- 
-### hey
+### What is Layout in Flutter?
+Layout is how widgets are arranged on the screen (horizontally, vertically, aligned, spaced, etc.). Flutter uses a flexible box model based on the widget tree.
+### Container Widget
+- A box that combines multiple layout, decoration, position, and transform properties.
+- Often used as a wrapper.
+```dart
+Container(
+  width: 200,
+  height: 100,
+  margin: EdgeInsets.all(10),
+  padding: EdgeInsets.all(16),
+  alignment: Alignment.center,
+  decoration: BoxDecoration(
+    color: Colors.blue,  
+    borderRadius: BorderRadius.circular(12),
+    boxShadow: [BoxShadow(blurRadius: 4, color: Colors.grey)],
+  ),
+  child: Text('Container', style: TextStyle(color: Colors.white)),
+)
+```
+### Row Widget
+- Places children horizontally (from left to right by default).
+- Uses flex layout model (children can expand, shrink, align).
+```dart
+Row(
+  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+  crossAxisAlignment: CrossAxisAlignment.center,
+  children: [
+    Icon(Icons.home),
+    Icon(Icons.favorite),
+    Icon(Icons.settings),
+  ],
+)
+```
+### Flex Widget
+- Base class for Row and Column.
+- Used when you want custom axis control (horizontal or vertical layout dynamically).
+```dart
+Flex(
+  direction: Axis.horizontal,
+  mainAxisAlignment: MainAxisAlignment.spaceAround,
+  children: [
+    Icon(Icons.access_alarm),
+    Icon(Icons.backup),
+    Icon(Icons.camera),
+  ],
+)
+```
+### Column Widget
+- A widget that lays out its children vertically (from top to bottom).
+```dart
+Column(
+  mainAxisAlignment: MainAxisAlignment.center,  // Vertical alignment
+  crossAxisAlignment: CrossAxisAlignment.center, // Horizontal alignment
+  children: <Widget>[
+    Text('Hello'),
+    ElevatedButton(onPressed: () {}, child: Text('Click')),
+  ],
+)
+``` 
+### Stack Widget
+- A widget that overlays children on top of each other.
+- Children are positioned relative to each other (like **z-index in CSS**).
+```dart
+Stack(
+  children: [
+    Container(width: 200, height: 200, color: Colors.blue),
+    Positioned(
+      bottom: 10,
+      right: 10,
+      child: Icon(Icons.star, color: Colors.white),
+    ),
+  ],
+)
+```
+### 
