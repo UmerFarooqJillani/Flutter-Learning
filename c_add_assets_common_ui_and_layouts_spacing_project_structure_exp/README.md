@@ -513,4 +513,28 @@ Stack(
   ],
 )
 ```
-### 
+### Flutter scrolling UI widgets
+#### ListView (Scrollable vertical list)
+- A scrollable linear list of widgets.
+- Used when you have a list of items like messages, menu items, contacts, etc.
+##### Common Constructors:
+- ListView() – Static list
+- ListView.builder() – Dynamic / Lazy list
+- ListView.separated() – With custom dividers
+- ListView.custom() – Advanced use cases
+#### 
+```dart
+ListView.builder(   // 	A lazy-loading list that only builds what’s visible on screen.
+  itemCount: 5,     // You want 5 items in total.
+  itemBuilder:      // A callback function that builds each item on demand.
+  (context, index) {  // The build context (position of widget in the tree).
+    //  The current list item number (0 to 4).
+    return ListTile(   // A ready-made material list item widget.
+      title: Text("Item $index"),
+    );
+  },
+)
+```
+- This creates a scrollable list with 5 dynamic list tiles.
+#### ListView() – Static List
+ 
