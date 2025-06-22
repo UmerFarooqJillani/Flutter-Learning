@@ -808,9 +808,10 @@ SliverToBoxAdapter(
   ),
 )
 ```
-```dart
+--- 
+<p align="center"></p>
+--- 
 
-```
 
 
  

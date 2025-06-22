@@ -344,46 +344,45 @@ class Layout extends StatelessWidget {
         //   ],
         // ),
         //--------------------Combining Slivers-------------------------------------------
-        // body: CustomScrollView(
-        //   slivers: [
-        //     SliverAppBar(
-        //       pinned: true,
-        //       expandedHeight: 150.0,
-        //       flexibleSpace: FlexibleSpaceBar(
-        //         title: Text('My App'),
-        //         background: Image.asset('assets/banner.jpg', fit: BoxFit.cover),
-        //       ),
-        //     ),
-        //     SliverToBoxAdapter(
-        //       child: Padding(
-        //         padding: EdgeInsets.all(16.0),
-        //         child: Text('Welcome to the Sliver World!'),
-        //       ),
-        //     ),
-        //     SliverList(
-        //       delegate: SliverChildBuilderDelegate(
-        //         (context, index) => ListTile(title: Text('Item $index')),
-        //         childCount: 10,
-        //       ),
-        //     ),
-        //     SliverGrid(
-        //       delegate: SliverChildBuilderDelegate(
-        //         (context, index) => Container(
-        //           color: Colors.orange[100 * (index % 9)],
-        //           child: Center(child: Text('Grid $index')),
-        //         ),
-        //         childCount: 6,
-        //       ),
-        //       gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-        //         crossAxisCount: 2,
-        //         mainAxisSpacing: 8.0,
-        //         crossAxisSpacing: 8.0,
-        //         childAspectRatio: 1.2,
-        //       ),
-        //     ),
-        //   ],
-        // ),
-        //------------------------------------------------------------------------------
+        body: CustomScrollView(
+          slivers: [
+            SliverAppBar(
+              pinned: true,
+              expandedHeight: 150.0,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text('My App'),
+                background: Image.asset('assets/banner.jpg', fit: BoxFit.cover),
+              ),
+            ),
+            SliverToBoxAdapter(
+              child: Padding(
+                padding: EdgeInsets.all(16.0),
+                child: Text('Welcome to the Sliver World!'),
+              ),
+            ),
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => ListTile(title: Text('Item $index')),
+                childCount: 10,
+              ),
+            ),
+            SliverGrid(
+              delegate: SliverChildBuilderDelegate(
+                (context, index) => Container(
+                  color: Colors.orange[100 * (index % 9)],
+                  child: Center(child: Text('Grid $index')),
+                ),
+                childCount: 6,
+              ),
+              gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                crossAxisCount: 2,
+                mainAxisSpacing: 8.0,
+                crossAxisSpacing: 8.0,
+                childAspectRatio: 1.2,
+              ),
+            ),
+          ],
+        ),
         //------------------------------------------------------------------------------
       ),
     );
