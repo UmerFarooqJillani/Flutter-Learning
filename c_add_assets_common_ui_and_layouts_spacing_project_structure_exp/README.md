@@ -426,7 +426,8 @@ PopupMenuButton<String>(
 ElevatedButton(
   style: ButtonStyle(
     backgroundColor: MaterialStateProperty.all(Colors.green),
-    foregroundColor: MaterialStateProperty.all(Colors.white),
+    // used WidgetStatePropertyAll() instead of MaterialStateProperty.all() because it's old
+    foregroundColor: MaterialStateProperty.all(Colors.white),   
     shape: MaterialStateProperty.all(
       RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
     ),
@@ -809,8 +810,8 @@ SliverToBoxAdapter(
 )
 ```
 --- 
-<!-- <p align="center"> [Icons In Dart]() </p> -->
---- 
+<!-- <p align="center"> [Icons In Dart]() </p>
+---  -->
 
 
 
