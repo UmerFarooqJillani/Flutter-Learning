@@ -57,12 +57,12 @@ class MyApp extends StatelessWidget {
                   ),
                 ),
               ),
-              Container(
-                margin: EdgeInsets.only(top: 20),
-              ),
+              Container(margin: EdgeInsets.only(top: 20)),
               // Buttons in Flutters
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.pushNamed(context, "/login");
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color.fromARGB(255, 10, 150, 150),
                   foregroundColor: Colors.white,

@@ -6,11 +6,16 @@ class InputFld extends StatefulWidget {
   const InputFld({super.key});
 
   @override
-  State<InputFld> createState() => _InputFldState();
+  State<InputFld> createState() => _InputFldState(); 
 }
 
 class _InputFldState extends State<InputFld> {
-  var name = "";
+  var name =
+      ""; // used for first children for onChange fnc (Call on each Change)
+  final _formKey =      // used for Second children for form validation
+      GlobalKey<FormState>(); // A key to access the FormState (e.g., for validation, saving)
+      	
+
   bool chnageButton = false;
   @override
   Widget build(BuildContext context) {
@@ -19,7 +24,8 @@ class _InputFldState extends State<InputFld> {
       home: Material(
         // peice of material
         //--------------------------------------------------------------------------
-        // A basic input widget used to enter text, numbers, passwords, etc.
+        //
+        // A basic input widget used to enter text, numbers, passwords, etc. (it's Old)
         // child: TextField(
         //   decoration: InputDecoration(
         //     labelText: 'Enter your name',
@@ -33,10 +39,11 @@ class _InputFldState extends State<InputFld> {
         //--------------------------------------------------------------------------
         child: SingleChildScrollView(
           child: Padding(
-            // padding: const EdgeInsets.fromLTRB(26, 90, 26, 0),
             padding: const EdgeInsets.symmetric(vertical: 80, horizontal: 26),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
+              /*
+              //Inkwell (Clickable Widgets) and TextFormField
               children: [
                 Image.asset("assets/images/Asset_23.png"),
                 SizedBox(height: 20),
@@ -68,6 +75,7 @@ class _InputFldState extends State<InputFld> {
                     // ),
 
                     // prefixIcon: Icon(Icons.person),
+                    
                   ),
                   onChanged: (value) {
                     // 	Called on each change
@@ -103,10 +111,10 @@ class _InputFldState extends State<InputFld> {
                 // ),
                 //---------------------------------------------------------------
                 InkWell(
+                  // hoverColor: Colors.amberAccent,
                   onTap: () {
                     setState(() {
                       chnageButton = true;
-                      print("Pressed");
                     });
                   },
                   child: AnimatedContainer(
@@ -138,6 +146,68 @@ class _InputFldState extends State<InputFld> {
                 //---------------------------------------------------------------
                 SizedBox(height: 60),
               ],
+              */
+              //---------------------------------------------------------------
+              /*
+              --> Form Validation
+                Form validation ensures users input data correctly before submitting (e.g., a login or sign-up form).
+                Flutter provides built-in support for form handling via:
+                  - Form
+                  - TextFormField
+                  - GlobalKey<FormState>
+                  - validator: callback(a function passed into another function as an argument, 
+                                which is then invoked/called inside the outer function to complete some 
+                                kind of routine or action or validation)
+              */
+              children: [
+                Form(
+                  key: _formKey,
+                  // "I want to control or access the internal state of this specific Form widget from outside the widget tree."
+                  child: Column(
+                    children: [
+                      TextFormField(
+                        controller: TextEditingController(),
+                        validator: (value) {  //A function to check if input is valid; returns error 'String' or 'null'
+                          if (value == null || value.isEmpty) {
+                            return 'Please enter something';
+                          }
+                          // print("$value");
+                          return null;
+                        },
+                      ),
+                      ElevatedButton(
+                        onPressed: () {
+                          if (_formKey.currentState!.validate()) {
+                            /*
+                             --> currentState
+                                This returns the current state of the Form identified by _formKey.
+                                Internally, the Form creates a FormState object when it's built. That object:
+                                  - Knows about all the TextFormFields
+                                  - Can run validations
+                                  - Can reset the form
+                                  - Can save the form
+                                So this returns a reference to the internal FormState object.
+                             --> ! (Null assertion operator)
+                                  - Ensures that currentState is not null. 
+                                  - It's say the Dart Trust me — it’s not null.
+                                  - Without it, Dart will complain if you access .validate() on something 
+                                    that could be null. 
+                             --> .validate()
+                                  - This calls the validator function of every TextFormField in the Form.
+                                  - Returns:
+                                      - true if all fields pass validation
+                                      - false if any validator fails
+                             --> 
+                            */
+                          }
+                        },
+                        child: Text('Submit'),
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+              //---------------------------------------------------------------
             ),
           ),
         ),

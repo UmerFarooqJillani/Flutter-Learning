@@ -829,8 +829,69 @@ SliverToBoxAdapter(
 - child	
   - The widget you want to make clickable
 ```dart
- // hello
+InkWell(
+  onTap: () {
+    setState(() {
+      chnageButton = true;
+      print("Pressed");
+    });
+  },
+  child: AnimatedContainer(
+    duration: Duration(milliseconds: 500),
+    height: 50,
+    width: chnageButton ? 50 : 150,
+    // width: 150,
+    alignment: Alignment.center,
+    decoration: BoxDecoration(
+      color: Colors.green,
+      // shape: chnageButton
+      //     ? BoxShape.circle
+      //     : BoxShape.rectangle,
+      borderRadius: BorderRadius.circular(8),
+    ),
+    child: chnageButton
+        ? Icon(Icons.done, color: Colors.white)
+        : Text(
+            "Login",
+            style: TextStyle(
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              // fontSize: chnageButton ? 14 : 18,
+              fontSize: 18,
+            ),
+          ),
+  ),
+),
 ```
+#### Why Use *Ink* Instead of *Container(AnimatedContainer)* Inside *InkWell*?
+The InkWell widget draws the ink splash animation on the Material surface.
+If you use Container, the splash might not appear correctly unless the background is managed properly.
+```dart
+// Problem with Container:
+InkWell(
+  onTap: () {},
+  child: Container(
+    color: Colors.orange,
+    padding: EdgeInsets.all(16),
+    child: Text('Click Me'),
+  ),
+)
+```
+The ripple may not appear correctly or at all if a Material ancestor isn't available or if Container handles the background.
+```dart
+InkWell(
+  onTap: () {},
+  child: Ink(
+    decoration: BoxDecoration(
+      color: Colors.orange,
+      borderRadius: BorderRadius.circular(8),
+    ),
+    padding: EdgeInsets.all(16),
+    child: Text('Click Me'),
+  ),
+)
+```
+Using Ink ensures that the ripple effect is properly clipped, painted, and rendered, following Material guidelines.
 ### GestureDetector	
 - Detect various gestures (tap, drag, long press, etc.) (No feedback)
 - **Use Case:** Full gesture control
