@@ -6,15 +6,16 @@ class InputFld extends StatefulWidget {
   const InputFld({super.key});
 
   @override
-  State<InputFld> createState() => _InputFldState(); 
+  State<InputFld> createState() => _InputFldState();
 }
 
 class _InputFldState extends State<InputFld> {
   var name =
       ""; // used for first children for onChange fnc (Call on each Change)
-  final _formKey =      // used for Second children for form validation
-      GlobalKey<FormState>(); // A key to access the FormState (e.g., for validation, saving)
-      	
+  final _formKey = // used for Second children for form validation
+      GlobalKey<
+        FormState
+      >(); // A key to access the FormState (e.g., for validation, saving)
 
   bool chnageButton = false;
   @override
@@ -167,7 +168,8 @@ class _InputFldState extends State<InputFld> {
                     children: [
                       TextFormField(
                         controller: TextEditingController(),
-                        validator: (value) {  //A function to check if input is valid; returns error 'String' or 'null'
+                        validator: (value) {
+                          //A function to check if input is valid; returns error 'String' or 'null'
                           if (value == null || value.isEmpty) {
                             return 'Please enter something';
                           }
