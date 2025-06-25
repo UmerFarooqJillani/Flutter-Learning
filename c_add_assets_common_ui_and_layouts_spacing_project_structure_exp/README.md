@@ -810,8 +810,67 @@ SliverToBoxAdapter(
 )
 ```
 --- 
-<!-- <p align="center"> [Icons In Dart]() </p>
----  -->
+## <p align="center"> Clickable Widgets </p>
+--- 
+### InkWell	
+- Material-style ripple effect (Tap with Ripple Effect)
+- **Use Case:** Tap on buttons, cards (Material)
+#### Property
+- onTap	
+  - Called when tapped
+- onDoubleTap	
+  - Called when double tapped
+- onLongPress	
+  - Called on long press
+- splashColor	
+  - Ripple effect color
+- borderRadius	
+  - Round corners for ripple
+- child	
+  - The widget you want to make clickable
+```dart
+ // hello
+```
+### GestureDetector	
+- Detect various gestures (tap, drag, long press, etc.) (No feedback)
+- **Use Case:** Full gesture control
+#### Property
+- onTap	
+  - Single tap detected
+- onDoubleTap	
+  - Double tap
+- onLongPress	
+  - Long press
+- onPanStart/Update/End	
+  - Drag gestures
+- onVerticalDrag / onHorizontalDrag	
+  - Axis-specific gestures
+- child	
+  - Any widget<br>
+Use GestureDetector for advanced gestures. No ripple.
+```dart
+GestureDetector(
+  onTap: () => print("Tapped"),
+  onDoubleTap: () => print("Double Tapped"),
+  onLongPress: () => print("Long Pressed"),
+  onPanUpdate: (details) => print("Dragging"),
+  child: Container(
+    padding: EdgeInsets.all(16),
+    color: Colors.green,
+    child: Text("Gesture Detector"),
+  ),
+)
+```
+### ElevatedButton	
+- Pre-styled Material button
+- **Use Case:** Standard action buttons
+### TextButton, OutlinedButton, IconButton	
+- Styled variations	
+- **Use Case:** Text/Outline/Icon only buttons
+### ListTile	
+- List with tappable item	
+- **Use Case:** Tap list items (menus etc.)
+
 
 
 
