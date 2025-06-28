@@ -6,51 +6,51 @@ class HomePage extends StatelessWidget {
     {
       'name': 'a',
       'path': '../assets/images/a.png',
-      'description': 'click to more details',
+      'description': ' A is for Apple, shiny and red...',
     },
     {
       'name': 'b',
       'path': '../assets/images/b.png',
-      'description': 'click to more details',
+      'description': 'B is for Ball, bouncing so high',
     },
     {
       'name': 'c',
       'path': '../assets/images/c.png',
+      'description': 'C is for Cat, soft and sweet',
+    },
+    {
+      'name': 'd',
+      'path': '../assets/images/d.png',
+      'description': 'D is for Dog, wagging its tail',
+    },
+    {
+      'name': 'e',
+      'path': '../assets/images/e.png',
       'description': 'click to more details',
     },
     {
-      'name': 'a',
-      'path': '../assets/images/a.png',
+      'name': 'f',
+      'path': '../assets/images/f.png',
       'description': 'click to more details',
     },
     {
-      'name': 'a',
-      'path': '../assets/images/a.png',
+      'name': 'g',
+      'path': '../assets/images/g.png',
       'description': 'click to more details',
     },
     {
-      'name': 'a',
-      'path': '../assets/images/a.png',
+      'name': 'h',
+      'path': '../assets/images/h.png',
       'description': 'click to more details',
     },
     {
-      'name': 'a',
-      'path': '../assets/images/a.png',
+      'name': 'i',
+      'path': '../assets/images/i.png',
       'description': 'click to more details',
     },
     {
-      'name': 'a',
-      'path': '../assets/images/a.png',
-      'description': 'click to more details',
-    },
-    {
-      'name': 'a',
-      'path': '../assets/images/a.png',
-      'description': 'click to more details',
-    },
-    {
-      'name': 'a',
-      'path': '../assets/images/a.png',
+      'name': 'j',
+      'path': '../assets/images/j.png',
       'description': 'click to more details',
     },
   ];
@@ -65,13 +65,18 @@ class HomePage extends StatelessWidget {
       body: ListView.separated(
         itemCount: 10,
         // -------------------------------------------------
-        // preferred this
+        // In this case preferred this ...
         itemBuilder: (context, index) {
           final song = songsList[index]; // Extract Map at index
           return ListTile(
-            title: Text(song['name'] ?? ''), // Null-safe access
+            title: Text(song['name'] ?? '', style: TextStyle(
+              color: Colors.black
+            ),), // Null-safe access
             subtitle: Text(song['description'] ?? ''),
             leading: Image.asset(song['path'] ?? '../assets/images/a.png'),
+            onTap: () {
+              print("Hello $index");
+            },
           );
         },
         // -------------------------------------------------
@@ -90,3 +95,4 @@ class HomePage extends StatelessWidget {
     );
   }
 }
+ 
