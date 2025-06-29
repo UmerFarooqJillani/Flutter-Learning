@@ -48,33 +48,74 @@ itemBuilder: (context, index) {
 --- 
 0. `/lib Folde`
 ```dart
-    lib/
-    │
-    ├── main.dart                 → Entry point of the app
-    ├── app/                      → App-wide configurations
-    │   ├── themes/                 → Theme files (colors, text styles)
-    │   ├── routes.dart             → Route names & generation (Routing configuration)
-    │   └── constants             → App-wide constants for static constants & config (strings, sizes)
-    │       ├── colors.dart
-    │       ├── strings.dart
-    │       └── sizes.dart
-    ├── core/                     → Global reusable utilities/services
-    │   ├── network/                → API service, HTTP client
-    │   ├── models/                 → Data models (User, Product, etc.)
-    │   ├── models/                 → Data models (like AlphabetModel/ClassDefinition)
-    │   │   ├── alphabet_model.dart     → Alphabet class
-    │   │   ├── number_data.dart        → Number class
-    │   │   └── user_model.dart         → For login/testing class
-    │   └── utils/                  → Helpers, validators, formatters, date converters, etc.
-    ├── data/
-    │   ├── story_list.dart    
-    │   └── alphabet_data.dart      → Alphabet list
-    ├── views/ or features/       → Screens/pages grouped by feature
-    │   ├── home/                 → One folder/file per screen  
-    │   ├── login/
-    │   └── dashboard/
-    ├── widgets/                  → Reusable UI components/custom widgets
-    └── services/                 → API, DB, Firebase logic
+lib/
+│
+├── main.dart                           # Entry point of the app (runApp)
+│
+├── app/                                # App-wide configuration (1-time setup)
+│   ├── routes.dart                     # All route names and routing logic
+│   ├── themes/                         # Theme settings (colors, text styles)
+│   │   ├── light_theme.dart
+│   │   └── dark_theme.dart
+│   └── constants/                      # Static constants (not changing at runtime)
+│       ├── colors.dart
+│       ├── strings.dart
+│       ├── sizes.dart
+│       └── assets.dart                 # Image/font asset paths
+│
+├── core/                               # Core infrastructure and global tools
+│   ├── network/                        # API service base (Dio/HTTP)
+│   │   ├── api_client.dart
+│   │   └── endpoints.dart
+│   ├── extensions/                     # Dart extensions (e.g. String.capitalize)
+│   │   └── string_extensions.dart
+│   └── utils/                          # Global helpers (validators, formatters)
+│       ├── validators.dart
+│       ├── date_format.dart
+│       └── logger.dart
+│
+├── models/                             # Plain Dart classes (data layer)
+│   ├── alphabet_model.dart
+│   ├── number_model.dart
+│   └── user_model.dart
+│
+├── data/                               # Local or sample/mock content
+│   ├── alphabet_data.dart              # Alphabet list
+│   ├── story_data.dart                 # List of stories
+│   └── number_data.dart                # List of numbers
+│
+├── features/                           # Main logic per feature/screen/module
+│   ├── home/
+│   │   ├── home_screen.dart
+│   │   ├── home_controller.dart
+│   │   └── home_widgets.dart
+│   ├── login/
+│   │   ├── login_screen.dart
+│   │   ├── login_form.dart
+│   │   └── login_controller.dart
+│   ├── dashboard/
+│   │   ├── dashboard_screen.dart
+│   │   └── dashboard_controller.dart
+│   └── alphabets/
+│       ├── alphabets_screen.dart
+│       ├── alphabet_card.dart
+│       ├── alphabet_controller.dart
+│       └── alphabet_detail_screen.dart
+│
+├── services/                           # Third-party integrations
+│   ├── firebase_service.dart
+│   ├── auth_service.dart
+│   └── local_db_service.dart
+│
+├── widgets/                            # Reusable global widgets
+│   ├── custom_button.dart
+│   ├── app_logo.dart
+│   ├── image_tile.dart
+│   └── custom_textfield.dart
+│
+└── config/ (Optional)
+    ├── env.dart                        # Environment variables (dev/prod/baseURL)
+    └── app_config.dart
 ```
 1. `main.dart`
   - It starts your app
