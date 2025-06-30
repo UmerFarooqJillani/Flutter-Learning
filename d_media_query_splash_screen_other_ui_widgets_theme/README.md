@@ -158,7 +158,7 @@ class AppRoutes {
 //   };
 // }
 ```
--  `app/constants/`
+-  `app/constants/`<br>
 Store non-changing values like:
   - Colors
   - Strings
