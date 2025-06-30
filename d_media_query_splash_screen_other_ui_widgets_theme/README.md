@@ -297,4 +297,15 @@ class AlphabetScreen extends StatelessWidget {
 --- 
 ### Constraints
 - Constraints in Flutter consist of a set of rules that define the size and position of widgets in a layout. These rules are critical to ensuring that widgets display correctly and automatically adapt to different screen sizes and device orientations.
+- Constraints define min/max width & height that a child widget must follow when it's being built.
+- How that's work: 
+### <p align="center">Constraints go down. Sizes go up. Parent sets position.</p>
+(Constraints effect down the parent ancestor, they write after constraints). (Widgets size already set by up means inherit from parent). (parents sets the ancestor size).
+
+- Flutter's layout system is:
+```dart
+Parent → passes constraints → to child
+Child  → responds with its size → back to parent
+``` 
+
 
