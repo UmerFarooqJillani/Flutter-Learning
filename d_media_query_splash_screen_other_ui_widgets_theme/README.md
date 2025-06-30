@@ -118,10 +118,46 @@ lib/
     └── app_config.dart
 ```
 1. `main.dart`
+  - Entry Point
 ```dart
+void main() => runApp(const MyApp());
 
+class MyApp extends StatelessWidget {
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp(
+      title: 'Kids App',
+      // initialRoute: AppRoutes.initialRoute,
+      initialRoute: '/',
+      routes: AppRoutes.routes,
+      theme: AppTheme.lightTheme,
+    );
+  }
+}
 ```
 2. `app/`
+-  `app/routes.dart`
+```dart
+import 'package:flutter/material.dart';
+import '../views/home/home_screen.dart';
+import '../views/login/login_screen.dart';
+
+class AppRoutes {
+  static const String initialRoute = '/login';
+  
+  static final Map<String, WidgetBuilder> routes = {
+    '/home': (context) => const HomeScreen(),
+    '/login': (context) => const LoginScreen(),
+  };
+}
+//-------------------------------------------------------
+// class AppRoutes {
+//   static final routes = {
+//     '/': (context) => const HomePage(),
+//     '/details': (context) => const DetailPage(),
+//   };
+// }
+```
 -  `app/constants/`
 Store non-changing values like:
   - Colors
@@ -166,7 +202,7 @@ List<Map<String, String>> storyList = [
   - This helps you separate data from UI logic.
 
 **Example:** `data/alphabet_data.dart`
-  - Create a Dummy List of Alphabets (Using the Model)
+  - Create a Dummy List of Alphabets (Using the Model `models/alphabet_model.dart`)
 ```dart
 import '../models/alphabet_model.dart';
 
@@ -256,4 +292,7 @@ class AlphabetScreen extends StatelessWidget {
   }
 }
 ```
+--- 
+## <p align="center"> xyz </p>
+--- 
 
