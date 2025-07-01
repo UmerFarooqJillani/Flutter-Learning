@@ -36,7 +36,8 @@ class HomePage extends StatelessWidget {
               subtitle: Text(item.description),
               leading: Image.asset(item.imagePath),
               onTap: () {
-                print("Hello $index");
+                print("object: $index");
+                Navigator.pushNamed(context, '/song');
               },
           );
         },
