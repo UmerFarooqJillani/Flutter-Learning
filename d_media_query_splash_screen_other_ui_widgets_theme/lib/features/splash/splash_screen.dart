@@ -17,11 +17,13 @@ class _SplashScreenState extends State<SplashScreen> {
 
   // _navigateToHome() async {
   //   await Future.delayed(Duration(milliseconds: 1500));
-  //   Navigator.pushReplacement(
-  //     // ignore: use_build_context_synchronously
-  //     context,
-  //     MaterialPageRoute(builder: (context) => HomePage()),
-  //   );
+  //   // Navigator.pushReplacement(
+  //   //   // ignore: use_build_context_synchronously
+  //   //   context,
+  //   //   MaterialPageRoute(builder: (context) => HomePage()),
+  //   // );
+  //   // ignore: use_build_context_synchronously
+  //   Navigator.pushReplacementNamed(context, '/home');
   // }
   // -------------------------------------------------------------
   @override
@@ -37,7 +39,7 @@ class _SplashScreenState extends State<SplashScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
-            Image.asset('../../../assets/images/a_song.png'),
+            Image.asset('assets/images/a_song.png'),
             Text("Welcom, Welcom to Kidlings Club"),
           ],
         ),
