@@ -5,13 +5,13 @@ import 'app/themes.dart';
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
-  MyApp({super.key});
+   const MyApp({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       theme: AppTheme.darkTheme,
-      initialRoute: '/',
+      initialRoute: '/', 
       routes: AppRoutes.routes,
     );
   }
