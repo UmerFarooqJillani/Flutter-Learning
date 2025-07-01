@@ -15,6 +15,7 @@ class HomePage extends StatelessWidget {
       'description': 'B is for Ball, bouncing so high',
     },
   ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -30,7 +31,7 @@ class HomePage extends StatelessWidget {
           final item = alphabetList[index];
           return ListTile(
             title: Text(item.letter, style: TextStyle(
-                color: Colors.black
+                // color: Colors.black
               ),
               ),
               subtitle: Text(item.description),

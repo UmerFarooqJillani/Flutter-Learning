@@ -40,7 +40,7 @@ class _SplashScreenState extends State<SplashScreen> {
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             Image.asset('assets/images/a_song.png'),
-            Text("Welcom, Welcom to Kidlings Club"),
+            Text("Welcom, Welcom to Kidlings Club."),
           ],
         ),
       ),
