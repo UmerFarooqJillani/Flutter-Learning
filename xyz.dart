@@ -71,6 +71,7 @@ class HomePage extends StatelessWidget {
 
                       // Welcome Text and Username (Title)
                       const Expanded(
+                            ),
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           mainAxisAlignment: MainAxisAlignment.center,
@@ -90,7 +91,6 @@ class HomePage extends StatelessWidget {
                                 fontWeight: FontWeight.bold,
                                 color: Colors.black87,
                               ),
-                            ),
                           ],
                         ),
                       ),
