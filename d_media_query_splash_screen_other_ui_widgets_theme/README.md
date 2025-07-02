@@ -404,7 +404,7 @@ LayoutBuilder(
 )
 ```
 ---
-## </p align="center"> PreferredSizeWidget (How to used the  Custom AppBar?) </p>
+## <p align="center"> PreferredSizeWidget (How to used the  Custom AppBar?) </p>
 --- 
 **PreferredSizeWidget** is a special interface (abstract class) in Flutter that tells the parent (usually Scaffold) how big the widget wants to be (its "preferred size").
 ### Use case:
