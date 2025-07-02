@@ -16,14 +16,12 @@ class HomePage extends StatelessWidget {
     },
   ];
 
+  HomePage({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Songs"),
-        centerTitle: true,
-        leading: Icon(Icons.arrow_back),
-      ),
+      appBar: MyAppBar(),
       drawer: MyDrawer(),
       body: ListView.separated(
         itemCount: alphabetList.length,

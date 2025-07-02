@@ -16,9 +16,7 @@ class MyDrawer extends StatelessWidget {
             child: UserAccountsDrawerHeader(
               accountName: Text("Umer Farooq Jillani"),
               accountEmail: Text("umerfarooqjillani92@gmail.com"),
-              decoration: BoxDecoration(
-                color: Colors.amber,
-              ),
+              decoration: BoxDecoration(color: Colors.amber),
               currentAccountPicture: CircleAvatar(
                 // backgroundImage: AssetImage(assetName),
                 backgroundImage: NetworkImage(imgURL),
@@ -28,7 +26,7 @@ class MyDrawer extends StatelessWidget {
           //-----------------------------------------------------------------
           ListTile(
             // leading: Image.network(imgURL),
-            leading: Icon(Icons.home, color: Colors.amber,),
+            leading: Icon(Icons.home, color: Colors.amber),
             title: Text("Home"),
             subtitle: Text("Click to go the Home Screen"),
           ),
@@ -36,4 +34,19 @@ class MyDrawer extends StatelessWidget {
       ),
     );
   }
+}
+
+class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
+  const MyAppBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      
+    );
+  }
+
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight); // 56.0 By default
+  // Size get preferredSize => Size.fromHeight(80.0);
 }

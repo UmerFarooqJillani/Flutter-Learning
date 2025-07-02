@@ -179,6 +179,7 @@ class HomePage extends StatelessWidget {
           ),
         ),
       ),
+      
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,

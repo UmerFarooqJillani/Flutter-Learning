@@ -403,7 +403,47 @@ LayoutBuilder(
   },
 )
 ```
+---
+## </p align="center"> PreferredSizeWidget (How to used the  Custom AppBar?) </p>
+--- 
+**PreferredSizeWidget** is a special interface (abstract class) in Flutter that tells the parent (usually Scaffold) how big the widget wants to be (its "preferred size").
+### Use case:
+It is mostly used with the Scaffold's appBar property, because Scaffold needs to know how tall the AppBar should be.
+### Default Example
+In Flutter, the built-in AppBar widget already implements PreferredSizeWidget. That's why we can write:
+```dart
+Scaffold(
+  appBar: AppBar(
+    title: Text("My App"),
+  ),
+);
+```
+- No issues — because AppBar knows how tall it wants to be (kToolbarHeight = 56.0 by default).
+### Custom AppBar?
+If you want to create a custom app bar widget, Flutter requires it to implement PreferredSizeWidget so that it knows how tall to render it.
+```dart
+import 'package:flutter/material.dart';
 
+class MyCustomAppBar extends StatelessWidget implements PreferredSizeWidget {
+  @override
+  Widget build(BuildContext context) {
+    return AppBar(
+      title: Text("Custom AppBar"),
+      backgroundColor: Colors.deepOrange,
+    );
+  }
 
-
-
+  // Tells Scaffold how tall the app bar should be
+  @override
+  Size get preferredSize => Size.fromHeight(kToolbarHeight);
+}
+```
+Now use it like:
+```dart
+Scaffold(
+  appBar: MyCustomAppBar(), // ✅ Works!
+  body: Center(child: Text("Hello")),
+);
+```
+### Why It’s Required
+Scaffold needs to reserve a fixed vertical space for the appBar. Since you can put any widget in the appBar slot, Flutter needs to ask the widget for its preferred size. That’s what PreferredSizeWidget solves.
