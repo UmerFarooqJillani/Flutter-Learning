@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
 import '../../data/alphabet_data.dart';
 import 'home_widgets.dart';
+
 class HomePage extends StatelessWidget {
+  HomePage({super.key});
+
   List<Map<String, String>> songsList = [
     {
       'name': 'a',
@@ -14,8 +17,6 @@ class HomePage extends StatelessWidget {
       'description': 'B is for Ball, bouncing so high',
     },
   ];
-
-  HomePage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -74,7 +75,17 @@ class HomePage extends StatelessWidget {
             Divider(color: const Color.fromARGB(106, 186, 186, 186)),
       ),
       // --------------------------------------------------------------------------------------------
-      
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        shape: CircleBorder(), // 👈 Ensures it stays circular
+        // shape: RoundedRectangleBorder(
+        //   // This makes it square/rounded
+        //   borderRadius: BorderRadius.circular(32),
+        // ),
+        backgroundColor: Colors.orange,
+        // mini: true, // 👈 Mini circular FAB
+        child: Image.asset("assets/images/scaner.png"),
+      ),
     );
   }
 }
