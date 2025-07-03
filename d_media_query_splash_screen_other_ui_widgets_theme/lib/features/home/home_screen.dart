@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../data/alphabet_data.dart';
 import 'home_widgets.dart';
-
 class HomePage extends StatelessWidget {
   List<Map<String, String>> songsList = [
     {
@@ -28,17 +27,19 @@ class HomePage extends StatelessWidget {
         itemBuilder: (context, index) {
           final item = alphabetList[index];
           return ListTile(
-            title: Text(item.letter, style: TextStyle(
+            title: Text(
+              item.letter,
+              style: TextStyle(
                 // color: Colors.black
               ),
-              ),
-              subtitle: Text(item.description),
-              leading: Image.asset(item.imagePath),
-              // trailing: ,   //visible on left of list item
-              onTap: () {
-                print("object: $index");
-                Navigator.pushNamed(context, '/song');
-              },
+            ),
+            subtitle: Text(item.description),
+            leading: Image.asset(item.imagePath),
+            // trailing: ,   //visible on left of list item
+            onTap: () {
+              print("object: $index");
+              Navigator.pushNamed(context, '/song');
+            },
           );
         },
         // -------------------------------------------------
@@ -72,6 +73,8 @@ class HomePage extends StatelessWidget {
         separatorBuilder: (context, index) =>
             Divider(color: const Color.fromARGB(106, 186, 186, 186)),
       ),
+      // --------------------------------------------------------------------------------------------
+      
     );
   }
 }

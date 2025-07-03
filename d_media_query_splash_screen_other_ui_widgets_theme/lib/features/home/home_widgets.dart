@@ -122,6 +122,15 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   }
 
   @override
-  // Size get preferredSize => Size.fromHeight(kToolbarHeight); // 56.0 By default
-  Size get preferredSize => Size.fromHeight(80.0);
+  Size get preferredSize => Size.fromHeight(kToolbarHeight); // 56.0 By default
+  // Size get preferredSize => Size.fromHeight(80.0);
+}
+
+class MyBottomBar extends StatelessWidget {
+  const MyBottomBar({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return BottomAppBar();
+  }
 }

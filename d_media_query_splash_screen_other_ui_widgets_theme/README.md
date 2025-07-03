@@ -447,3 +447,74 @@ Scaffold(
 ```
 ### Why It’s Required
 Scaffold needs to reserve a fixed vertical space for the appBar. Since you can put any widget in the appBar slot, Flutter needs to ask the widget for its preferred size. That’s what PreferredSizeWidget solves.
+--- 
+## <p align="center"> Bottom Bar (With/Without FCB) </p>
+--- 
+### BottomAppBar
+- BottomAppBar is a customizable container that sits at the bottom of the screen and can hold buttons, floating action buttons, or even a Row of widgets.
+- Often used with Scaffold.floatingActionButton.
+#### Properties
+- **color:** Background color
+- **shape:** Shape of the notch if using FAB
+- **child:** Typically a Row of widgets
+- **elevation:** Shadow depth
+- **notchMargin:** Margin around the notch
+```dart
+floatingActionButton: FloatingActionButton(
+  onPressed: () {},
+  child: Icon(Icons.add),
+),
+floatingActionButtonLocation:FloatingActionButtonLocation.centerDocked,
+bottomNavigationBar: BottomAppBar(
+  color: Colors.blue,
+  shape: CircularNotchedRectangle(),
+  notchMargin: 8.0,
+  child: Row(
+    mainAxisAlignment: MainAxisAlignment.spaceAround,
+    children: [
+      IconButton(icon: Icon(Icons.home),onPressed: () {}),
+      IconButton(icon: Icon(Icons.search),onPressed: () {}),
+    ],
+  ),
+),
+```
+### BottomNavigationBar
+- A built-in navigation widget to easily switch between different tabs/pages in your app.
+#### Properties
+- **items:**	List of BottomNavigationBarItems
+- **currentIndex:**	Selected tab index
+- **onTap:**	Called when an item is tapped
+- **type:**	fixed or shifting layout
+- **selectedItemColor:**	Active item color
+- **unselectedItemColor:**	Inactive item color
+- **backgroundColor:**	Bar background
+- **iconSize:**	Icon size
+- **showSelectedLabels:**	Show/hide selected label
+- **showUnselectedLabels:**	Show/hide unselected label
+```dart
+int _selectedIndex = 0;
+
+Scaffold(
+  body: Center(child: Text("Selected index: $_selectedIndex")),
+  bottomNavigationBar: BottomNavigationBar(
+    currentIndex: _selectedIndex,
+    onTap: (index) {
+      setState(() {
+        _selectedIndex = index;
+      });
+    },
+    selectedItemColor: Colors.orange,
+    unselectedItemColor: Colors.grey,
+    items: const [
+      BottomNavigationBarItem( // A single item (icon + label) used inside BottomNavigationBar.
+        icon: Icon(Icons.home),
+        label: "Home",
+      ),
+      BottomNavigationBarItem(
+        icon: Icon(Icons.favorite),
+        label: "Favorites",
+      ),
+    ],
+  ),
+);
+```
