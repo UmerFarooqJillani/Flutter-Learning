@@ -75,16 +75,38 @@ class HomePage extends StatelessWidget {
             Divider(color: const Color.fromARGB(106, 186, 186, 186)),
       ),
       // --------------------------------------------------------------------------------------------
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        shape: CircleBorder(), // 👈 Ensures it stays circular
-        // shape: RoundedRectangleBorder(
-        //   // This makes it square/rounded
-        //   borderRadius: BorderRadius.circular(32),
-        // ),
-        backgroundColor: Colors.orange,
-        // mini: true, // 👈 Mini circular FAB
-        child: Image.asset("assets/images/scaner.png"),
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   shape: CircleBorder(), // 👈 Ensures it stays circular
+      //   // shape: RoundedRectangleBorder(
+      //   //   // This makes it square/rounded
+      //   //   borderRadius: BorderRadius.circular(32),
+      //   // ),
+      //   backgroundColor: Colors.orange,
+      //   // mini: true, // 👈 Mini circular FAB
+      //   child: Image.asset("assets/images/scaner.png"),
+      // ),
+      // --------------------------------------------------------------------------------------------
+      // If you want precise control over FAB size, shape, tap radius, and image fitting, the best and 
+      // cleanest method is using RawMaterialButton (or InkWell with ClipOval) like
+      // --------------------------------------------------------------------------------------------
+      floatingActionButton: RawMaterialButton(
+        onPressed: () {
+          // Your action here
+        },
+        // fillColor: Colors.white,
+        // elevation: 6.0,
+        shape: CircleBorder(),
+        constraints: BoxConstraints.tightFor(
+          width: 75.0, // FAB width
+          height: 75.0, // FAB height
+        ),
+        child: Image.asset(
+          'assets/images/scaner.png',
+          height: 65, // your icon height
+          width: 65, // your icon width
+          fit: BoxFit.contain,
+        ),
       ),
     );
   }
