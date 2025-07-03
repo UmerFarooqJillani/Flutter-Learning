@@ -447,6 +447,7 @@ Scaffold(
 ```
 ### Why It’s Required
 Scaffold needs to reserve a fixed vertical space for the appBar. Since you can put any widget in the appBar slot, Flutter needs to ask the widget for its preferred size. That’s what PreferredSizeWidget solves.
+
 --- 
 ## <p align="center"> Bottom Bar (With/Without FCB) </p>
 --- 
