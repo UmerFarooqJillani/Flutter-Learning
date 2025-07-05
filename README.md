@@ -46,9 +46,8 @@ $ cd my_app
 $ flutter analyze
 $ flutter test
 $ flutter run lib/main.dart
-
 ```
-For more commands [click here](https://github.com/UmerFarooqJillani/Flutter-Learning) 
+For more commands [click here](https://github.com/UmerFarooqJillani/Flutter-Learning/blob/main/Flutter%20CLI.txt)
 
 ## Setup Visual Studio Code (VS Code)
 VS Code is a code editor to build and debug apps. With the Flutter extension installed, you can compile, deploy, and debug Flutter apps.
