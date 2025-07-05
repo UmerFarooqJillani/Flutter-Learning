@@ -2,13 +2,13 @@
 
 flutter create my_app       
     ---> This creates a new folder my_app with a full Flutter project structure
-Flutter doctor
+flutter doctor
     ---> ...
-Flutter clean
+flutter clean
     ---> ...
-$ flutter analyze
+flutter analyze
     ---> ...
-$ flutter test
+flutter test
     ---> ...
-$ flutter run lib/main.dart
+flutter run lib/main.dart
     ---> ...
