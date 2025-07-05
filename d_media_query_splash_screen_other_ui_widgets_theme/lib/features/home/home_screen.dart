@@ -5,7 +5,7 @@ import 'home_widgets.dart';
 class HomePage extends StatelessWidget {
   HomePage({super.key});
 
-  List<Map<String, String>> songsList = [
+  final List<Map<String, String>> songsList = [
     {
       'name': 'a',
       'path': '../../assets/images/a.png',
