@@ -6,7 +6,7 @@ class SplashScreen extends StatefulWidget {
 }
 
 class _SplashScreenState extends State<SplashScreen> {
-  // -------------------------------------------------------------
+  // ------------------------ (option # 01) -----------------------------------
   // Add the splash(launch) screen to used this method otherwise use option # 02
   // @override
   // void initState() {

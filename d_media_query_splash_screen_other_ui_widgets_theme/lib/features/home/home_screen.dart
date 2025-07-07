@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../data/alphabet_data.dart';
 import 'home_widgets.dart';
+import '../../widgets/bottom_menu/bottom_bar.dart';
 
 class HomePage extends StatelessWidget {
   HomePage({super.key});
@@ -87,7 +88,7 @@ class HomePage extends StatelessWidget {
       //   child: Image.asset("assets/images/scaner.png"),
       // ),
       // --------------------------------------------------------------------------------------------
-      // If you want precise control over FAB size, shape, tap radius, and image fitting, the best and 
+      // If you want precise control over FAB size, shape, tap radius, and image fitting, the best and
       // cleanest method is using RawMaterialButton (or InkWell with ClipOval) like
       // --------------------------------------------------------------------------------------------
       floatingActionButton: RawMaterialButton(
@@ -108,6 +109,10 @@ class HomePage extends StatelessWidget {
           fit: BoxFit.contain,
         ),
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      //---------------------------------------------------------------------------------------------
+      bottomNavigationBar: MyBottomBar(),
+      //---------------------------------------------------------------------------------------------
     );
   }
 }

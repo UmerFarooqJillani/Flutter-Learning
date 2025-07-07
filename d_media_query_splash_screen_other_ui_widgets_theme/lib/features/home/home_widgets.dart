@@ -53,7 +53,7 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
               'Welcome back',
               style: TextStyle(
                 fontSize: 14,
-                color: Colors.grey,
+                color: const Color.fromARGB(255, 117, 117, 117),
                 fontWeight: FontWeight.w400,
               ),
             ),
