@@ -1,3 +1,6 @@
+//--------------------------- (Option 1) ------------------------------------------------
+// Switch Image Dynamically Using State (You swap the image with a setState).
+//---------------------------------------------------------------------------
 // import 'package:flutter/material.dart';
 // import 'bottom_bar_controller.dart';
 
@@ -49,8 +52,8 @@
 //     );
 //   }
 // }
-//---------------------------------------------------------------------------
-// Option 2: Colorize PNG Dynamically (if your PNG is a white or black alpha icon)
+//--------------------------- (Option 2) ------------------------------------------------
+// Colorize PNG Dynamically (if your PNG is a white or black alpha icon)
 //---------------------------------------------------------------------------
 import 'package:d_media_query_splash_screen_other_ui_widgets_theme/widgets/bottom_menu/bottom_bar_controller.dart';
 import 'package:flutter/material.dart';
@@ -91,8 +94,3 @@ class _MyBottomBarState extends State<MyBottomBar> {
     );
   }
 }
-// IconButton(icon: Image.asset("assets/images/home.png", color: Colors.amber,), onPressed: () {}, padding: EdgeInsets.zero,),
-// IconButton(icon: Image.asset("assets/images/songs.png", color: Colors.amber, ), onPressed: () {}, padding: EdgeInsets.zero,),
-// SizedBox(height: 40, width: 40,),
-// IconButton(icon: Image.asset("assets/images/games.png", color: Colors.amber, ), onPressed: () {}, padding: EdgeInsets.zero,),
-// IconButton(icon: Image.asset("assets/images/profile.png", color: Colors.amber, ), onPressed: () {}, padding: EdgeInsets.zero,),
