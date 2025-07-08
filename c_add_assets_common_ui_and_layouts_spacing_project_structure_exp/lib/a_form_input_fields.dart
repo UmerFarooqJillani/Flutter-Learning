@@ -10,12 +10,9 @@ class InputFld extends StatefulWidget {
 }
 
 class _InputFldState extends State<InputFld> {
-  var name =
-      ""; // used for first children for onChange fnc (Call on each Change)
+  var name = ""; // used for first children for onChange fnc (Call on each Change)
   final _formKey = // used for Second children for form validation
-      GlobalKey<
-        FormState
-      >(); // A key to access the FormState (e.g., for validation, saving)
+      GlobalKey<FormState>(); // A key to access the FormState (e.g., for validation, saving)
 
   bool chnageButton = false;
   @override
