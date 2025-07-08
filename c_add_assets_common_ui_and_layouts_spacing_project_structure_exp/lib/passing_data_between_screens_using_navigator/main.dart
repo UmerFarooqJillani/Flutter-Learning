@@ -14,7 +14,7 @@
           final args = ModalRoute.of(context)!.settings.arguments as Map<String, dynamic>;
           print(args['name']); // Ali
 //-------------------------------------------------------------------------------------
--->  Push with Arguments
+--> Push with Arguments
     -> HomeScreen:
       Navigator.push(
         context,
@@ -33,7 +33,7 @@
           return Text("Data received: $data");
         }
       }
- */
+*/
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
 import 'second_screen.dart';
