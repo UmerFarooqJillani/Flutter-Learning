@@ -6,11 +6,18 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(title: Text("Home Page")),
       body: Center(
-        child: ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, '/login');
-          },
-          child: Text('Go to Login'),
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.center,
+          spacing: 20,
+          children: [
+            Text("Welcom to HomePage", style: TextStyle(fontSize: 22, fontWeight: FontWeight.bold),),
+            ElevatedButton(
+              onPressed: () {
+                Navigator.pushNamed(context, '/login', arguments: Text("data"),);
+              },
+              child: Text('Go to Login'),
+            ),
+          ],
         ),
       ), 
     );
