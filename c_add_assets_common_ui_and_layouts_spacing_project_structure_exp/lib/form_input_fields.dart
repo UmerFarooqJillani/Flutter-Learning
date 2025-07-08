@@ -167,7 +167,9 @@ class _InputFldState extends State<InputFld> {
                   child: Column(
                     children: [
                       TextFormField(
-                        controller: TextEditingController(),
+                        controller:
+                            TextEditingController(), // Used to read/write the value of a text field programmatically.
+                        // controller: SearchController(),
                         validator: (value) {
                           //A function to check if input is valid; returns error 'String' or 'null'
                           if (value == null || value.isEmpty) {
@@ -213,12 +215,6 @@ class _InputFldState extends State<InputFld> {
             ),
           ),
         ),
-        //--------------------------------------------------------------------------
-        //--------------------------------------------------------------------------
-        //--------------------------------------------------------------------------
-        //--------------------------------------------------------------------------
-        //--------------------------------------------------------------------------
-        //--------------------------------------------------------------------------
         //--------------------------------------------------------------------------
         //--------------------------------------------------------------------------
       ),
