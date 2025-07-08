@@ -9,9 +9,7 @@ class MyBottomBar extends StatefulWidget {
   @override
   State<MyBottomBar> createState() => _MyBottomBarState();
 }
-mixin Data{
-  // static 
-}
+
 class _MyBottomBarState extends State<MyBottomBar> {
   static int isSelectIndex = 0;
   @override
