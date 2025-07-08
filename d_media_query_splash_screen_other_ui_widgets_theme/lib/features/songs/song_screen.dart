@@ -1,3 +1,4 @@
+import 'package:d_media_query_splash_screen_other_ui_widgets_theme/widgets/bottom_menu/bottom_bar.dart';
 import 'package:flutter/material.dart';
 
 class SongPage extends StatelessWidget {
@@ -50,8 +51,9 @@ class SongPage extends StatelessWidget {
       // ),
       //---------------------------------------------------------------------------
       body: Center(
-        child: Text("Hello, I'm Umer Farooq Jillani"),
+        child: Text("Not, Design Song Page"),
       ),
+      bottomNavigationBar: MyBottomBar(),
       //---------------------------------------------------------------------------
       //---------------------------------------------------------------------------
       //---------------------------------------------------------------------------

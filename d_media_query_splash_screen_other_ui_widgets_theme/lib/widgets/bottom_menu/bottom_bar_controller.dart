@@ -22,9 +22,9 @@
 // ];
 //-----------------------------------------------------------------------------------
 final List<Map<String, String>> items = [
-  {"Path": "assets/images/home.png"},
-  {"Path": "assets/images/songs.png"},
-  {"Path": ""},
-  {"Path": "assets/images/games.png"},
-  {"Path": "assets/images/profile.png"},
+  {"Path": "assets/images/home.png", "route": "/home"},
+  {"Path": "assets/images/songs.png", "route": "/song"},
+  {"Path": "", "route": ""},
+  {"Path": "assets/images/games.png", "route": "/game"},
+  {"Path": "assets/images/profile.png", "route": "profile"},
 ];

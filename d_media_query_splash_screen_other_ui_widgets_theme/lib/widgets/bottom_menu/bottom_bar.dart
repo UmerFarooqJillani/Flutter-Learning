@@ -64,7 +64,7 @@ class MyBottomBar extends StatefulWidget {
 }
 
 class _MyBottomBarState extends State<MyBottomBar> {
-  int _isSelectIndex = 0;
+  static int _isSelectIndex = 0;
 
   @override
   Widget build(BuildContext context) {
@@ -84,7 +84,7 @@ class _MyBottomBarState extends State<MyBottomBar> {
                 setState(() {
                   _isSelectIndex = index;
                 });
-                Navigator.pushNamed(context, '/');
+                Navigator.pushNamed(context, items[index]["route"]!);
               },
               padding: EdgeInsets.zero,
             );
