@@ -293,7 +293,7 @@ class AlphabetScreen extends StatelessWidget {
 }
 ```
 --- 
-## <p align="center"> xyz </p>
+## <p align="center"> constraints </p>
 --- 
 ### Constraints
 - Constraints in Flutter consist of a set of rules that define the size and position of widgets in a layout. These rules are critical to ensuring that widgets display correctly and automatically adapt to different screen sizes and device orientations.
