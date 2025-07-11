@@ -518,6 +518,29 @@ Stack(
 #### ListView (Scrollable vertical list)
 - A scrollable linear list of widgets.
 - Used when you have a list of items like messages, menu items, contacts, etc.
+##### shrinkWrap Property
+- By default, a ListView expands to fill the parent in its scroll direction (e.g., full screen height) – even if its items are few
+- With shrinkWrap: true, the list instead sizes itself to fit its content size
+###### When & Why to Use It:
+- Your ListView or GridView is inside another scrollable (e.g., in a Column or inside a SingleChildScrollView), to avoid layout overflow errors
+- **Recommendations:** Use shrinkWrap sparingly. For long or infinite lists, keep it false, or consider using slivers or ensuring a bounded height with Widgets like Container or Expanded.
+```dart
+SingleChildScrollView(
+  child: Column(
+    children: [
+      Text('Header above list'),
+      ListView.builder(
+        shrinkWrap: true,
+        physics: NeverScrollableScrollPhysics(),
+        itemCount: 5,
+        itemBuilder: (_, i) => ListTile(title: Text('Item $i')),
+      ),
+      Text('Footer below list'),
+    ],
+  ),
+);
+```
+Here, shrinkWrap lets the list size to its 5 items, and NeverScrollableScrollPhysics() disables its own scrolling, allowing the parent ScrollView to handle it.
 ##### Common Constructors:
 - ListView() – Static list
 - ListView.builder() – Dynamic / Lazy list
