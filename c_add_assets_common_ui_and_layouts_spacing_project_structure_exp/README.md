@@ -407,6 +407,20 @@ DropdownButton<String>(
     });
   },
 )
+//--------------------OR (using .map)------------------------------
+String selectedCountry = 'USA';
+
+DropdownButton<String>(
+  value: selectedCountry,
+  items: ['USA', 'India', 'UK', 'Germany']
+      .map((country) => DropdownMenuItem(value: country, child: Text(country)))
+      .toList(),
+  onChanged: (value) {
+    setState(() {
+      selectedCountry = value!;
+    });
+  },
+);
 ```
 ### `PopupMenuButton`       
 - Button that shows a popup menu
