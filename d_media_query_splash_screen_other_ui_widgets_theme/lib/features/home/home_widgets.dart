@@ -138,21 +138,59 @@ class _MyBodyState extends State<MyBody> {
   @override
   Widget build(BuildContext context) {
     // return SwitchListTile(         // with title
-    return Switch(
-      // without title only switch
-      activeColor: Colors.amber,
-      activeThumbImage: AssetImage('assets/images/z.png'),
-      inactiveThumbImage: AssetImage('assets/images/y.png'),
-      inactiveTrackColor: Colors.blue,
-      inactiveThumbColor: Colors.deepOrange,
-      hoverColor: Colors.green,
-      value: isSwitched,
-      onChanged: (bool value) {
-        setState(() {
-          isSwitched = value;
-        });
-        print("Switch is now: $value");
-      },
+    return Column(
+      mainAxisAlignment: MainAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.center,
+      children: [
+        Switch(
+          // without title only switch
+          activeColor: Colors.amber,
+          activeThumbImage: AssetImage('assets/images/z.png'),
+          inactiveThumbImage: AssetImage('assets/images/y.png'),
+          inactiveTrackColor: Colors.blue,
+          inactiveThumbColor: Colors.deepOrange,
+          hoverColor: Colors.green,
+          value: isSwitched,
+          onChanged: (bool value) {
+            setState(() {
+              isSwitched = value;
+            });
+            print("Switch is now: $value");
+          },
+        ),
+        /*
+        --> What is clipBehavior?
+            Imagine you have a container (a box) and you put a photo inside it.
+              Now, if the photo is bigger than the box, what should happen?
+                - Should it stick out?
+                - Or should we cut (clip) it to fit inside the box?
+            That's where clipBehavior comes in — it tells Flutter what to do when something is too big.
+          
+        */
+        Container(
+          width: 100,
+          height: 100,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(30),
+            border: Border.all(
+              style: BorderStyle.solid,
+              color: Colors.black,
+              width: 2,
+            ),
+          ),
+          // clipBehavior: Clip.none, // The image is larger than the box? It will overflow (stick out of the box)!
+          // clipBehavior: Clip.hardEdge, // Now, anything outside the rounded edges will be cut off (clipped).
+          // clipBehavior: Clip.antiAlias, // Same clipping as hardEdge, but now the edges are smoother (good for curved corners).
+          clipBehavior: Clip.antiAliasWithSaveLayer, // It’s like antiAlias, but adds extra polish for shadows, transparency, etc.
+          child: OverflowBox(
+            maxWidth: 200,
+            child: Image.asset(
+              "assets/images/a_song.png",
+              color: Colors.lightGreen,
+            ),
+          ),
+        ),
+      ],
     );
   }
 }
