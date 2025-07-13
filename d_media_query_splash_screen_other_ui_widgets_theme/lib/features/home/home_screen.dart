@@ -23,9 +23,7 @@ class HomePage extends StatelessWidget {
     return Scaffold(
       appBar: MyAppBar(),
       drawer: MyDrawer(),
-      body: Center(
-        child: Text("Not Design"),
-      ),
+      body: MyBody(),
       // --------------------------------------------------------------------------------------------
       // floatingActionButton: FloatingActionButton(
       //   onPressed: () {},

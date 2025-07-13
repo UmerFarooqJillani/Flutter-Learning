@@ -125,3 +125,34 @@ class MyAppBar extends StatelessWidget implements PreferredSizeWidget {
   Size get preferredSize => Size.fromHeight(kToolbarHeight); // 56.0 By default
   // Size get preferredSize => Size.fromHeight(80.0);
 }
+
+class MyBody extends StatefulWidget {
+  const MyBody({super.key});
+  @override
+  State<MyBody> createState() => _MyBodyState();
+}
+
+class _MyBodyState extends State<MyBody> {
+  static bool isSwitched = false;
+
+  @override
+  Widget build(BuildContext context) {
+    // return SwitchListTile(         // with title
+    return Switch(
+      // without title only switch
+      activeColor: Colors.amber,
+      activeThumbImage: AssetImage('assets/images/z.png'),
+      inactiveThumbImage: AssetImage('assets/images/y.png'),
+      inactiveTrackColor: Colors.blue,
+      inactiveThumbColor: Colors.deepOrange,
+      hoverColor: Colors.green,
+      value: isSwitched,
+      onChanged: (bool value) {
+        setState(() {
+          isSwitched = value;
+        });
+        print("Switch is now: $value");
+      },
+    );
+  }
+}

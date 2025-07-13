@@ -58,8 +58,7 @@ class SongPage extends StatelessWidget {
       //---------------------------------------------------------------------------
       body: ListView.separated(
         shrinkWrap: true,
-        // itemCount: alphabetList.length,
-        itemCount: 3,
+        itemCount: alphabetList.length,
         itemBuilder: (context, index) {
           final item = alphabetList[index];
           return ListTile(
