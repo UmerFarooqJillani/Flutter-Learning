@@ -40,7 +40,7 @@ class MediaQueryExample extends StatelessWidget {
 
     // EdgeInsets safePadding = MediaQuery.of(context).padding;
     //                         or
-    // Different from padding — it doesn't shrink when keyboard appears.
+    // Different from padding, it doesn't shrink when keyboard appears.
     // EdgeInsets safePadding = MediaQuery.of(context).viewPadding;
 
     // ---------------------05-(devicePixelRatio)--------------------
