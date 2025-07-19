@@ -59,7 +59,7 @@
   
 */
 import 'package:flutter/material.dart';
-// first for all add the dependencies
+// first for all add the dependencies in pubspec.yaml "flutter_screenutil: ^5.9.3"
 import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ make sure this works
 
 /*
