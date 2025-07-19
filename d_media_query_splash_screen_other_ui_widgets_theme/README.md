@@ -519,3 +519,16 @@ Scaffold(
   ),
 );
 ```
+--- 
+## <p align="center"> How Real Cross-Platform Apps Handle It </p>
+--- 
+### Mobile (Android/iOS)	
+- Use ScreenUtil with a mobile designSize like 390x844
+### Tablet	
+- Adjust layout using ResponsiveBuilder or LayoutBuilder
+### Web/Desktop	
+- Use ScreenUtil for spacing + font scaling, and use ScreenTypeLayout to show different layouts/widgets
+### macOS/Linux/Windows	
+- Treat like large screens (desktop layout)
+
+---
