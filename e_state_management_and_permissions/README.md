@@ -66,3 +66,20 @@ Dark mode / language switcher
     Global app-level UI state	
     - **Best Solution**<br>
     Provider, Riverpod, Bloc
+
+## Why Each Tool?
+### ✅ setState()
+**When:** Local widget changes (e.g., toggles, counters)<br>
+**Why:** Lightweight and easy
+### ✅ Provider
+**When:** Small–medium apps, sharing state like user session, app theme<br>
+**Why:** Simple, official Flutter package, beginner-friendly
+### ✅ Riverpod
+**When:** Growing projects or multiple teams<br>
+**Why:** Safer, cleaner, testable than Provider (no context dependency)
+### ✅ Bloc/Cubit
+**When:** Complex UI logic, business workflows (multi-step forms, nested streams)<br>
+**Why:** Predictable, scalable, popular in large teams
+### ✅ GetX
+**When:** Need quick MVPs with fewer boilerplates<br>
+**Why:** Easy syntax, but less preferred in scalable teams
