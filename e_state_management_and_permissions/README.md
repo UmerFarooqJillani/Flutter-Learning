@@ -104,3 +104,27 @@ Triggers a rebuild
 5. dispose()<br>
 Clean up (controllers, listeners, etc.)
 
+## MVVM in Flutter
+- MVVM stands for:
+    - Model	
+        - Business logic and data (API, database, etc.)
+    - View	
+        - UI (Widgets, screens)
+    - ViewModel	
+        - Mediator between View & Model — holds the state, processes logic
+- MVVM helps separate concerns: UI, data, and logic stay clean and modular.
+### Why Use MVVM in Flutter?
+- Modular Code	
+- Clean Separation
+- Ideal for Solo & Team Dev
+- State Ready
+### Folder Structure for MVVM in Flutter
+```dart
+/lib
+  /models           → Pure data classes (User, Story, etc.)
+  /views            → UI Widgets (screens, forms, etc.)
+  /viewmodels       → Holds business logic/state per screen
+  /services         → API or DB services
+  /utils            → Helpers, formatters, constants
+  main.dart
+```
