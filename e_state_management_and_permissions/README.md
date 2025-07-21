@@ -83,3 +83,24 @@ Dark mode / language switcher
 ### ✅ GetX
 **When:** Need quick MVPs with fewer boilerplates<br>
 **Why:** Easy syntax, but less preferred in scalable teams
+
+## setState (Built-in State Management)
+- **When to Use:**
+    - Simple state changes in a single widget
+    - UI updates like counter, button toggles, form field validation<br>
+- **When NOT to Use:**
+    - Sharing data across screens or widgets
+    - Managing complex logic (e.g., APIs, auth)
+
+## Lifecycle of StatefulWidget with setState
+1. initState()<br>
+Called once when widget is inserted
+2. didChangeDependencies()<br>
+Called after init; listens to InheritedWidgets
+3. build()<br>
+Called on every setState()
+4. setState()<br>
+Triggers a rebuild
+5. dispose()<br>
+Clean up (controllers, listeners, etc.)
+
