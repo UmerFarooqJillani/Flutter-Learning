@@ -1,16 +1,21 @@
------> Link the root repo README.md File (after Link remove this line) <-------
-
 flutter create my_app       
-    ---> This creates a new folder my_app with a full Flutter project structure
+    ---> This creates a new folder project (my_app). 
+    ---> Generates a folder my_app with default files (main.dart, pubspec.yaml, etc.)
 flutter doctor
-    ---> ...
+    ---> Checks your Flutter environment setup. 
+    ---> Shows any issues with Flutter SDK, Android Studio, emulators, devices, etc.
 flutter clean
-    ---> ...
+    ---> Deletes build/cache files. 
+    ---> Clears /build, .dart_tool, and pubspec.lock
 flutter analyze
-    ---> ...
-flutter test
-    ---> ...
+    ---> Analyzes code for errors, warnings, and best practices. 
+    ---> Lints your code and shows style violations. 
+    ---> Run this before pushing code.
 flutter run lib/main.dart
-    ---> ...
+    ---> Runs the app using a specific entry file (usually main.dart). 
+    ---> Launches the app on a connected emulator or device. 
+    ---> Add options like --release for production or --flavor for env configs.
 flutter pub get
-    ---> ...
+    ---> Fetches packages listed in pubspec.yaml. 
+    ---> Installs new or updated dependencies. 
+    ---> Run after adding a new package or cloning a project.
