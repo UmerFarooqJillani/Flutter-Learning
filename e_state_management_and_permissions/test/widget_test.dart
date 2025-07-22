@@ -8,7 +8,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
-import 'package:e_state_management_and_permissions/main.dart';
+import 'package:e_state_management_and_permissions/url_launcher.dart';
 
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {

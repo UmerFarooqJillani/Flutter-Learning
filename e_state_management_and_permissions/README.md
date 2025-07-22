@@ -128,3 +128,57 @@ Clean up (controllers, listeners, etc.)
   /utils            → Helpers, formatters, constants
   main.dart
 ```
+--- 
+## <p align="center">Links in Flutter</p>
+--- 
+1.  **Required Package:**
+    - url_launcher
+2. **Add to `pubspec.yaml`**
+3. **Open a Link OUTSIDE the App**
+    - Opens the link in the device's default browser
+    - Use `LaunchMode.externalApplication`
+    ```dart
+    import 'package:url_launcher/url_launcher.dart';
+
+    void openWebLinkExternally() async {
+    final Uri url = Uri.parse('https://flutter.dev');
+
+    if (await canLaunchUrl(url)) {
+        await launchUrl(
+        url,
+        mode: LaunchMode.externalApplication, // ✅ Outside the app
+        );
+    } else {
+        throw 'Could not launch $url';
+    }
+    }
+    ```
+4. **Open a Link INSIDE the App** 
+    - Opens a link inside your Flutter app using the in-app browser tab (Chrome Custom Tabs / Safari View Controller)  
+    - Use `LaunchMode.inAppWebView` or `LaunchMode.platformDefault`
+    ```dart
+    void openLinkInApp() async {
+      final Uri url = Uri.parse('https://flutter.dev');
+
+      if (await canLaunchUrl(url)) {
+        await launchUrl(
+          url,
+          mode: LaunchMode.inAppWebView, // ✅ Inside the app
+        );
+      } else {
+        throw 'Could not launch $url';
+      }
+    }
+    ```
+5. **Tapable link in text**
+    - `GestureDetector`
+    - `InkWell`
+    - `Link` widget
+        - Before using it: 
+            - Add the dependencies: `url_launcher: ^latest`
+        and Import: `import 'package:url_launcher/link.dart';`
+6. **When to Use Link vs launchUrl**
+    - Use `Link`
+        - Declarative button or text link in Flutter style
+    - Use `launchUrl` directly
+        - Full control of browser mode, programmatic logic
