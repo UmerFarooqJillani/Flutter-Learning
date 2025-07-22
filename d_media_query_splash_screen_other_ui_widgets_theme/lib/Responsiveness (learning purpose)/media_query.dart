@@ -36,8 +36,6 @@ class MediaQueryExample extends StatelessWidget {
     // ---------------------03-(Adjust UI Based on Orientation)-------------------------
     // Orientation orientation = MediaQuery.of(context).orientation;
     // ---------------------04-(Adjust Padding for Notch/StatusBar)-------------------
-    // Orientation orientation = MediaQuery.of(context).orientation;
-
     // EdgeInsets safePadding = MediaQuery.of(context).padding;
     //                         or
     // Different from padding, it doesn't shrink when keyboard appears.
