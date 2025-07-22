@@ -25,7 +25,14 @@
     - `launchUrl`: Actually opens the URL using the method you specify.
     - `mode`: Controls how it opens.
 
---> 
+--> String vs. parse()
+    -> String:
+      - A string is just plain text.
+        String urlString = "https://flutter.dev";
+      - It’s easy to type, read, and display.
+      - But it's not structured
+    -> Uri.parse():
+      - Uri.parse() converts a String into a Uri object — a structured format Dart understands.
 */
 import 'package:flutter/material.dart';
 import 'package:url_launcher/link.dart';
