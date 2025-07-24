@@ -25,7 +25,7 @@ class MyApp extends StatelessWidget {
       */
       initialRoute: '/',
       routes: {
-        '/': (context) => _CounterWidget(), // ('/' means Home route)
+        '/': (context) => CounterWidget(), // ('/' means Home route)
         '/myapp': (context) => MyApp(), // same as the above working
         '/login': (context) => LoginPage(),
         '/dashboard': (context) => Dashboard(),
