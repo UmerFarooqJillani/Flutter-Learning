@@ -150,22 +150,22 @@ Flutter splits widgets into StatefulWidget and State:
 ``` 
 --- 
 ## Components of StatefulWidget
-### 'class _CounterWidget extends StatefulWidget'
+### 'class CounterWidget extends StatefulWidget'
 - Declares a widget that can change state.
 - It inherits from StatefulWidget, so it must implement createState() method.
-- Doesn't hold the state itself. Instead, representative to 'CounterWidgetState'.
-- The _ before the name makes it private to this Dart file
-- Private class:  It's a good practice to encapsulate the widget logic.
+- Doesn't hold the state itself. Instead, representative to '_CounterWidgetState'.
 
-### '@override CounterWidgetState createState() => CounterWidgetState();'
+### '@override State<CounterWidget> createState() => _CounterWidgetState();'
 - It's called when the widget is first inserted into the widget tree.
 - It returns the State class that contains the actual UI and logic for the widget.
+- The _ before the name makes it private to this Dart file
+- Private class:  It's a good practice to encapsulate the widget logic.
 #### 'createState()'
 - createState() connects your widget (_CounterWidget) to its logic/UI (CounterWidgetState)
 - Tells Flutter which State class to use for this widget.
 - Returns an instance of _CounterWidgetState.
 
-### Why Do We Use State<_CounterWidget>?
+### Why Do We Use State<CounterWidget>?
 Because Flutter needs to know which widget this state belongs to. It uses this info internally to:
 - Call lifecycle methods like **initState**, **build**, **dispose**.
 - Rebuild the widget when **setState()** is called.
