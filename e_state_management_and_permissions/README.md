@@ -182,3 +182,51 @@ Clean up (controllers, listeners, etc.)
         - Declarative button or text link in Flutter style
     - Use `launchUrl` directly
         - Full control of browser mode, programmatic logic
+--- 
+## <p align="center"> `Future<void>` vs `void` </p>
+--- 
+### `void function`
+- This is a synchronous function — it runs from top to bottom, instantly.
+```dart
+void sayHello() {
+    print("Hello!");
+}
+```
+- Use this when:
+    - No delay involved
+    - No API calls
+    - No await required
+### `Future<void>`
+- This is an asynchronous function — it may take time (e.g., loading a file, waiting for a network call).
+```dart
+Future<void> loadAudio() async {
+  await Future.delayed(Duration(seconds: 2));
+  print("Audio Loaded");
+}
+```
+- Use this when:
+    - You're using await inside
+    - You’re loading assets, reading files, making HTTP requests, etc.
+
+### `Future<void> main() async {}` Asynchronous Main
+- This version allows you to await async setup code before launching the app.
+- Use when:
+    - You need to load data, initialize Firebase, or read from SharedPreferences before runApp()
+- **Example:**
+    ```dart
+    Future<void> main() async {
+        WidgetsFlutterBinding.ensureInitialized();  // Required when using async in main
+        await Firebase.initializeApp();             // Setup Firebase before UI starts
+        runApp(MyApp());
+    }
+    ```
+- Why `WidgetsFlutterBinding.ensureInitialized()?`
+    - When you do something before UI starts, like:
+        - Using plugins
+        - Loading services
+        - Reading files
+    - You must call this first:
+    ```dart
+    WidgetsFlutterBinding.ensureInitialized();
+    ```
+    - This ensures that Flutter’s system services are available before your code runs.
