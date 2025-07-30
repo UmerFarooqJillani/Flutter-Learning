@@ -233,7 +233,7 @@ Future<void> loadAudio() async {
 --- 
 ## <p align="center">Handling user input</p>
 --- 
-- `SelectableText`
+- `SelectableText`<br><br>
     ```dart
     @override
     Widget build(BuildContext context) {
@@ -245,7 +245,7 @@ Future<void> loadAudio() async {
     From forth the fatal loins of these two foes''');
     }
     ```
-- `RichText`
+- `RichText`<br><br>
     ```dart
     @override
     Widget build(BuildContext context) {
