@@ -285,3 +285,37 @@ Future<void> loadAudio() async {
         );
         }
     ```
+--- 
+## <p align="center">Useful Widgets</p>
+--- 
+### `Scrollbar`
+```dart
+Scrollbar(
+    isAlwaysShow: true, // force the Scrollbar to always show
+    showTrackOnHover: true,
+    child: ListView.builder(
+        itemCount: 20,  //Make sure it's finite otherwise Scrollbar will not visible
+        itemBuilder: (c, i) => MyItem(i),
+    ),
+)
+```
+### Specialized scrollable widgets `DraggableScrollableSheet`
+```dart
+DraggableScrollableSheet(
+initialChildSize: 0.3, // Starts at 30% of screen height - Start at 30% of screen
+minChildSize: 0.2, // Minimum height when dragged down - Minimum 20% height
+maxChildSize: 0.8, // Maximum height when dragged up - Can drag up to 80%
+builder: (context, scrollController) {
+  return SingleChildScrollView(
+    controller: scrollController,
+    child: Column(
+      children: List.generate(
+        30,
+        (index) => ListTile(title: Text("Item $index")),
+      ),
+    ),
+  );
+},
+)
+```
+### 
