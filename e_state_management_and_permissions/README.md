@@ -230,3 +230,58 @@ Future<void> loadAudio() async {
     WidgetsFlutterBinding.ensureInitialized();
     ```
     - This ensures that Flutter’s system services are available before your code runs.
+--- 
+## <p align="center">Handling user input</p>
+--- 
+- `SelectableText`
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+    return const SelectableText('''
+    Two households, both alike in dignity,
+    In fair Verona, where we lay our scene,
+    From ancient grudge break to new mutiny,
+    Where civil blood makes civil hands unclean.
+    From forth the fatal loins of these two foes''');
+    }
+    ```
+- `RichText`
+    ```dart
+    @override
+    Widget build(BuildContext context) {
+    return RichText(
+        text: TextSpan(
+        text: 'Hello ',
+        style: DefaultTextStyle.of(context).style,
+        children: const <TextSpan>[
+            TextSpan(text: 'bold', style: TextStyle(fontWeight: FontWeight.bold)),
+            TextSpan(text: ' world!'),
+        ],
+        ),
+    );
+    }
+    ```
+- `Slider`
+    - The Slider widget lets a user adjust a value by moving an indicator, such as a volume bar.
+    - Configuration parameters for the Slider widget:
+        - `value` represents the slider's current value
+        - `onChanged` is the callback that gets triggered when the handle is moved
+        - `min` and `max` establish minimum and maximum values allowed by the slider
+        - `divisions` establishes a discrete interval with which the user can move the handle along the track.
+    ```dart
+        double _currentVolume = 1;
+        @override
+        Widget build(BuildContext context) {
+        return Slider(
+            value: _currentVolume,
+            max: 5,
+            divisions: 5,
+            label: _currentVolume.toString(),
+            onChanged: (double value) {
+            setState(() {
+                _currentVolume = value;
+            });
+            },
+        );
+        }
+    ```
