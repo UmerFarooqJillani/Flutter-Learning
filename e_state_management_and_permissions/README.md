@@ -318,4 +318,23 @@ builder: (context, scrollController) {
 },
 )
 ```
-### 
+### `ListWheelScrollView`
+```dart 
+ListWheelScrollView(
+  itemExtent: 90, // height of each item
+  children: List.generate(
+    20,
+    (index) => Container(
+      alignment: Alignment.center,
+      decoration: BoxDecoration(
+        color: Colors.blue[100 * ((index % 8) + 1)],
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Text(
+        'Item ${index + 1}',
+        style: TextStyle(fontSize: 18),
+      ),
+    ),
+  ),
+)
+``` 
