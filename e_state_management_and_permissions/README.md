@@ -421,4 +421,40 @@ ListWheelScrollView(
 - **What does `get notified` mean?**<br>
     In Flutter, it means:
     - The system calls your listener function automatically when something changes, like a value, animation progress, or scroll position.
-### `Listenable` in Flutter
+### `ValueListenableBuilder` and `Listenable` in Flutter
+- `Listenable` is a simple interface in Flutter that allows you to register listeners and get notified when a value or state changes.
+- Think of it like a signal bell: when something changes, everyone who's listening gets notified.
+- Common `Listenable` Classes:
+    - `ValueNotifier<T>`
+        - Notifies when a single value changes
+    - `AnimationController`	
+        - Notifies animation status or frame changes
+    - `ChangeNotifier`
+        - Notifies multiple listeners (like Provider uses)
+- **Example:**
+    ```dart
+    final ValueNotifier<int> counter = ValueNotifier<int>(0);
+    /*
+        value: The current value stored.
+        addListener(): Add a callback when value changes.
+        removeListener(): Remove a callback.
+        notifyListeners(): Manually notify all listeners.
+    */
+    ```
+    - Here, `counter` is a `ValueNotifier`, which is also a `Listenable`.
+    - When `counter.value` changes, any listener (like a UI widget) can respond.
+
+- `ValueListenableBuilder:` A widget that rebuilds automatically when a ValueNotifier (or any ValueListenable) value changes.
+    - **syntax:**
+        ```dart
+        ValueListenableBuilder<T>(
+        valueListenable: ValueNotifier<T>,
+        builder: (context, value, child) {
+            return Widget(); // Build UI using new value
+        },
+        )
+        ```
+    - When Should You Use It?
+        - You want lightweight state management
+        - The state only affects one widget or local scope
+        - You don’t want to use heavy packages like `Provider` or `Bloc`
