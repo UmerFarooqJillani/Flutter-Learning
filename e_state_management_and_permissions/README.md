@@ -338,3 +338,87 @@ ListWheelScrollView(
   ),
 )
 ``` 
+--- 
+## <p align="center">Share state in your app</p>
+--- 
+### `Callback Function`
+- A callback function is a function you pass as a parameter to another function so that it can be called back (executed) later.
+- **It’s like telling Flutter:** *Here’s a function. Please call it when you're done with your task.*
+- **Real-Life Analogy:**<br>
+*You order food from a restaurant (main function).*<br>
+***You tell them:** "📞 Call me back when the food is ready."*<br>
+*That phone number is the callback.*<br>
+- **Dart Code Example:**
+    ```dart
+    void greetUser(String name, Function onGreet) {
+        print("Hello, $name!");
+        onGreet(); // 🔁 Callback is used here
+    }
+    void sayDone() {
+        print("Greeting is complete!");
+    }
+
+    void main() {
+        greetUser("Ali", sayDone);
+    }
+    /*
+    Output:
+        Hello, Ali!
+        Greeting is complete!
+    */
+    ``` 
+- **Flutter Example:**
+    ```dart
+    import 'package:flutter/material.dart';
+    void main() {
+    runApp(MaterialApp(home: MyApp()));
+    }
+
+    class MyApp extends StatelessWidget {
+    @override
+    Widget build(BuildContext context) {
+        return Scaffold(
+        body: Center(
+            child: MyButton(
+            onPressed: () {
+                print("Button was clicked!");
+            },
+            ),
+        ),
+        );
+    }
+    }
+
+    class MyButton extends StatelessWidget {
+    final VoidCallback onPressed; // <== Callback
+    const MyButton({super.key, required this.onPressed});
+
+    @override
+    Widget build(BuildContext context) {
+        return ElevatedButton(
+        onPressed: onPressed, // Call the passed function
+        child: Text('Click Me'),
+        );
+    }
+    }
+    ```
+- **Types of Callback Functions in Dart:**
+    - `VoidCallback`	    A function with no arguments and no return
+    - `Function(String)`    Takes a String as parameter
+    - `int Function(int)`   Takes and returns an int
+    - `Future<void> Function()` Async callback
+### What is a `Listener` and `get notified` in Flutter?
+- A listener is a function (callback) you attach to an object (like ValueNotifier, AnimationController, etc.) so that you get a notification when something changes.<br>
+- **Think of it like saying:**<br>
+    - Hey, Flutter — please TELL ME when this value, animation, or state changes, so I can respond.
+- **Real-Life Example**
+    ```text 
+    🧍You = the app
+    🔔 Doorbell = the listener
+    🚪 Visitor = a change in value
+    ``` 
+    - When a visitor comes, the doorbell rings (the listener gets called) — this is "getting notified."
+- **What does `get notified` mean?**<br>
+    In Flutter, it means:
+    - The system calls your listener function automatically when something changes, like a value, animation progress, or scroll position.
+### `Listenable` in Flutter
