@@ -423,6 +423,7 @@ ListWheelScrollView(
     - The system calls your listener function automatically when something changes, like a value, animation progress, or scroll position.
 ### `ValueListenableBuilder` and `Listenable` in Flutter
 - `Listenable` is a simple interface in Flutter that allows you to register listeners and get notified when a value or state changes.
+- It does not rebuild UI by itself, but notifies others (like builders or widgets) to update.
 - Think of it like a signal bell: when something changes, everyone who's listening gets notified.
 - Common `Listenable` Classes:
     - `ValueNotifier<T>`
@@ -458,3 +459,5 @@ ListWheelScrollView(
         - You want lightweight state management
         - The state only affects one widget or local scope
         - You don’t want to use heavy packages like `Provider` or `Bloc`
+
+

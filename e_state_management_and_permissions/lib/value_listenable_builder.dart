@@ -19,10 +19,11 @@ class MyApp extends StatelessWidget {
           child: ValueListenableBuilder<int>(
             // ✅ Step 2: ValueListenableBuilder listens to the notifier, ValueListenableBuilder auto-rebuilds the widget
             valueListenable: counter,
-            builder: (context, value, child) {
+            builder: (context, value, child) { 
               return Text(
-                'Counter: $value, Child: $child',
+                'Counter: $value',        
                 style: TextStyle(fontSize: 32),
+                // child:	Optional static child that doesn’t rebuild
               );
             },
           ),
