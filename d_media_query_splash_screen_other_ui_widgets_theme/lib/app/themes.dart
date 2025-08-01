@@ -9,6 +9,13 @@ class AppTheme {
     primarySwatch: AppColors.primary,
     scaffoldBackgroundColor: AppColors.background,
 
+    // Define the default brightness and colors.
+    colorScheme: ColorScheme.fromSeed(
+      seedColor: Colors.purple,
+      // ···
+      brightness: Brightness.dark,
+    ),
+
     appBarTheme: const AppBarTheme(
       // backgroundColor: Color.fromARGB(233, 33, 149, 243),
       // foregroundColor: Colors.white,
@@ -41,9 +48,7 @@ class AppTheme {
     ),
   );
 
-  static final darkTheme = ThemeData(
-    brightness: Brightness.dark,
-  );
+  static final darkTheme = ThemeData(brightness: Brightness.dark);
 }
 /*
 --> Why Use Theme?
@@ -67,6 +72,14 @@ class AppTheme {
         'Hello Themed World',
         style: Theme.of(context).textTheme.headlineSmall,
       )
+    OR:
+      child: Text(
+        'This is a very long text that should wrap to multiple lines.',
+        style: Theme.of(context).textTheme.bodyMedium!.copyWith(
+        letterSpacing: 0.0,
+      ),
+  ),
+
 
 --> Common ThemeData Properties
   - primaryColor              --> Main color used in the app
