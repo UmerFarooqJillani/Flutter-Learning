@@ -459,5 +459,163 @@ ListWheelScrollView(
         - You want lightweight state management
         - The state only affects one widget or local scope
         - You don’t want to use heavy packages like `Provider` or `Bloc`
+--- 
+## <p align="center">Gestures in Flutter</p>
+--- 
+### What is Offset?
+- In Flutter, every position on the screen is given in X (horizontal) and Y (vertical) coordinates. This is called an Offset.
+- **Example:**
+    ```dart
+    Offset(50, 100)
+    // x = 50 → 50 pixels from the left
+    // y = 100 → 100 pixels from the top
+    ```
+    So Offset = position of your finger on the screen.
+### What is Drag?
+- A drag gesture happens when the user touches and moves their finger in one direction.
+- Flutter provides direction-specific drag gestures:
+    - `onVerticalDrag...`
+        - Only vertical dragging
+    - `onHorizontalDrag...`
+        - Only horizontal dragging
+- When to Use:
+    - Scrolling vertically/horizontally (e.g., inside a custom list)
+    - When you want only one-directional movement
+    ```dart 
+    import 'package:flutter/material.dart';
+    import 'dart:math';
 
+    void main() {
+    runApp(
+        MaterialApp(
+        debugShowCheckedModeBanner: false,
+        home: Scaffold(body: Detect()),
+        ),
+    );
+    }
+
+    class Detect extends StatefulWidget {
+    @override
+    State<Detect> createState() => _DetectState();
+    }
+
+    class _DetectState extends State<Detect> {
+    double _top = 0;
+    final double containerHeight = 300;
+    final double boxHeight = 150;
+
+    @override
+    Widget build(BuildContext context) {
+        return Center(
+        child: Container(
+            height: containerHeight,
+            width: 200,
+            color: Colors.grey,
+            child: Stack(
+            children: [
+                Positioned(
+                top: _top,
+                child: GestureDetector(
+                    onVerticalDragStart: (details) {
+                    print('Vertical drag started');
+                    },
+
+                    onVerticalDragUpdate: (details) {
+                    setState(() {
+                        _top += details.delta.dy;
+                        _top = max(0, min(_top, containerHeight - boxHeight));
+                    });
+                    },
+                    onVerticalDragEnd: (details) {
+                    if (_top == 150) {
+                        print("Touch End");
+                    }
+                    },
+                    child: Container(
+                    height: boxHeight,
+                    width: 150,
+                    color: Colors.blue,
+                    child: const Center(
+                        child: Text(
+                        "Drag me",
+                        style: TextStyle(color: Colors.white),
+                        ),
+                    ),
+                    ),
+                ),
+                ),
+            ],
+            ),
+        ),
+        );
+    }
+    }
+    ``` 
+### What is Pan?
+- A pan gesture is similar to drag, but it allows movement in any direction (X and Y axis simultaneously).
+- Flutter provides pan gesture callbacks that combine horizontal and vertical behavior.
+- Callback
+    - `onPanStart`	When pan starts
+    - `onPanUpdate`	While panning
+    - `onPanEnd`	When pan ends
+- When to Use:
+    - Free movement (dragging shapes or cards)
+    - Drawing apps
+    - Custom sliders
+    ```dart 
+    GestureDetector(
+    onPanStart: (details) {
+        print('Pan started at ${details.globalPosition}');
+    },
+    onPanUpdate: (details) {
+        print('Pan moved by ${details.delta}');
+    },
+    onPanEnd: (details) {
+        print('Pan ended');
+    },
+    child: Container(
+        height: 150,
+        width: 150,
+        color: Colors.orange,
+        child: Center(child: Text("Pan me")),
+    ),
+    )
+    ``` 
+### Gestures in Flutter
+- Gestures are user actions like:
+    - Tap
+    - Double Tap
+    - Long Press
+    - Drag (Vertical, Horizontal)
+    - Pan (drag in any direction)
+- Two-Layer Gesture System in Flutter
+    1. Pointer Events (Low Level)	
+        - Tracks finger/stylus/mouse raw movement on screen
+    2. Gestures (High Level)
+        - Detects meaningful actions like tap, drag, etc. using pointer data.
+### Pointer Events in Flutter
+- When you touch the screen with your finger, mouse, or stylus, Flutter detects these interactions using Pointer Events.
+- Think of Pointer Events as:
+    - Flutter's way of knowing where and how you're touching the screen.
+- These events happen before any gesture (like tap or swipe) is recognized.
+- **Common Pointer Events:**
+    - `PointerDownEvent`
+        - When your finger touches the screen.
+    - `PointerMoveEvent`
+        - When you slide or drag your finger around.
+    - `PointerUpEvent`
+        - When you lift your finger. 
+    - `PointerCancelEvent`
+        - When something like a popup or notification cancels the touch.
+- **How to Detect Pointer Events?**
+    - You use a special widget called `Listener`.
+    - `Listener`: Listener is a widget that listens to your raw finger/mouse/stylus actions like touch, drag, release, cancel, etc.
+        - You are building a custom drawing, game, or interactive visual
+        - Don’t use Listener if:
+            - You just want to detect a simple tap or swipe, for that use GestureDetector.
+- **When to Use Pointer Events?**
+    - Custom drawing (e.g., signature pad, painting app)
+    - Advanced gesture detection
+    - Multi-touch tracking
+    - Raw interaction visualization
 
