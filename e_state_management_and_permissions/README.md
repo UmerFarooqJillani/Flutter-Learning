@@ -619,12 +619,12 @@ ListWheelScrollView(
     - Multi-touch tracking
     - Raw interaction visualization
 --- 
-## <p align="center">Navigation & routing</p>
---- 
+## <p align="center"> Navigation & routing </p>
+---  
 ### Work with tabs `DefaultTabController`
 ```dart 
 import 'package:flutter/material.dart';
-
+ 
 void main() {
   runApp(const TabBarDemo());
 }
@@ -659,7 +659,8 @@ class TabBarDemo extends StatelessWidget {
       ),
     );
   }
-}
+} 
 ``` 
+
 
 
