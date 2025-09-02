@@ -1,0 +1,23 @@
+---------------------------------------------------------------------
+--> Flutter Responsiveness:
+---------------------------
+    -> LayoutBuilder
+    ----------------
+            Best for real-world projects, more control, future-proof.
+    -> responsive_builder
+    ---------------------
+            Same as LayoutBuilder but cleaner syntax, good for teams.
+    -> ScreenUtilInit
+    -----------------
+            For scaling fonts/paddings/small sizes, don’t use for layout structure.
+    -> MediaQuery
+    -------------
+            For device info (safe area, orientation, screen size).
+
+---------------------------------------------------------------------
+--> Recommended stack (future-proof):
+-------------------------------------
+    -> LayoutBuilder (structure) + ScreenUtil (scaling) + MediaQuery (environment info).
+    -> Use responsive_builder only if you want convenience/cleaner code.
+    
+---------------------------------------------------------------------
