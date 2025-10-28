@@ -1,5 +1,10 @@
 # <p align="center"> d_media_query_splash_screen_other_ui_widgets_theme </p>
 
+## plugin Vs. package<br>
+Every plugin is a package, but not every package is a plugin.
+- Package = Dart-only code
+- Plugin = Dart + Native code
+
 ## null-safety
 ### `!` (Null assertion operator)
 - Ensures that currentState is not null. 
