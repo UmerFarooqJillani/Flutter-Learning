@@ -148,8 +148,20 @@ import 'package:flutter_screenutil/flutter_screenutil.dart'; // ✅ make sure th
     -> builder: (context, child)
     ------------------------------
       - This wraps your root widget (usually MaterialApp) after initializing ScreenUtil.
-
-    
+      
+    ------------------------------
+    -> Why child exists (internal widget reuse)
+        When you pass:
+            child: App(),
+        ScreenUtilInit:
+            - builds ScreenUtil first
+            - then gives your child to builder
+        So:
+            builder: (context, child) => child!;
+        Means:
+            - Do NOT rebuild App()
+            - Just return the already-prepared widget
+            This keeps your app optimized.
 */
 void main() {
   runApp(
