@@ -2,9 +2,11 @@ import 'package:flutter/material.dart';
 import 'pages/home_page.dart';
 import 'pages/login_page.dart';
 import 'pages/dashboard.dart';
+
 void main() {
   runApp(NavStc());
 }
+
 /*
 --> What is the Navigation Stack?
     Flutter uses a stack data structure for navigation. When you navigate to a new screen, 
@@ -70,6 +72,40 @@ class NavStc extends StatelessWidget {
         '/login': (context) => LoginPage(),
         '/dashboard': (context) => Dashboard(),
       },
-      );
+    );
   }
 }
+
+// Routes Details
+//----------------------The first one — “Static routes map” (Basic)-------------------------------
+class AppRoutes1 {
+  static final myRoutes = {
+    // "/": (context) => LoginScreen(),
+    // "/login": (context) => LoginScreen(),
+  };
+}
+
+// - Good for beginners, because:
+//     - It’s short
+//     - You can quickly map routes to pages.
+//     - Works fine if your app has just 2–3 screens.
+//----------------------The second one — “onGenerateRoute” (Professional)------------------------
+class AppRoutes {
+  static const initial = '/';
+  static const login = '/login';
+  static const dashboard = '/dashboard';
+
+  // static Route<dynamic> onGenerateRoute(RouteSettings settings) {
+  //   switch (settings.name) {
+  //     case initial:
+  //     return MaterialPageRoute(builder: (_) => const SplashOrLoginPage());
+  //     case login:
+  //     return MaterialPageRoute(builder: (_) => const LoginPage());
+  //     case dashboard:
+  //     return MaterialPageRoute(builder: (_) => const DashboardPage());
+  //     default:
+  //     return MaterialPageRoute(builder: (_) => const NotFoundPage());
+  //   }
+  // }
+}
+//-----------------------------------------------------
